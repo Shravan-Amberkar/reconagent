@@ -13,7 +13,7 @@ from datetime import timedelta
 
 from recon.book import Book
 from recon.models import Hypothesis, Match, Proof
-from recon.money import fmt_inr
+from recon.money import credit_within_window, fmt_inr
 from recon.verifier import verify
 
 STRICT_CREDIT_LAG_DAYS = 1   # deterministic passes only trust same-day / next-day credits
@@ -70,9 +70,17 @@ def _eq_b(book: Book, left, right) -> str:
     return f"payments {lhs} = invoices {rhs}"
 
 
-def _commit_unique(book: Book, level: str, explanations: list[tuple[list[str], list[str], str]]):
-    """Commit each explanation whose ids appear in no other explanation and which verifies."""
+def _commit_unique(book: Book, level: str, explanations: list[tuple[list[str], list[str], str]],
+                   rivals: list[tuple[list[str], list[str]]] = ()):
+    """Commit each explanation whose ids appear in no other explanation and which verifies.
+
+    `rivals` are explanations that are plausible but outside the strict window: they never
+    commit, but they DO count as competing claimants. Without them, a decoy credit inside the
+    strict window looks unique when the real credit landed late after a bank holiday."""
     touches = Counter(i for left, right, _ in explanations for i in set(left) | set(right))
+    seen = {(tuple(sorted(l)), tuple(sorted(r))) for l, r, _ in explanations}
+    extra = {(tuple(sorted(l)), tuple(sorted(r))) for l, r in rivals} - seen
+    touches.update(i for left, right in extra for i in set(left) | set(right))
     committed = []
     for left, right, rule in explanations:
         if any(touches[i] > 1 for i in set(left) | set(right)):
@@ -110,14 +118,19 @@ def run_level_a(book: Book) -> list[Match]:
     # L2 / L3: amount and bounded subset-sum inside a strict window, unique only
     explanations = []
     free_setl = [s for s in book.settlements.values() if book.free(s.settlement_id)]
+    rivals = []
     for t in book.credits():
         if not book.free(t.txn_id):
             continue
-        cands = [(s.settlement_id, s.amount) for s in free_setl
-                 if s.settled_on <= t.date <= s.settled_on + timedelta(days=STRICT_CREDIT_LAG_DAYS)]
-        for sol in find_subset_sum(cands, t.credit_paise, max_k=3):
+        strict = [(s.settlement_id, s.amount) for s in free_setl
+                  if s.settled_on <= t.date <= s.settled_on + timedelta(days=STRICT_CREDIT_LAG_DAYS)]
+        for sol in find_subset_sum(strict, t.credit_paise, max_k=3):
             explanations.append(([t.txn_id], sol, "L2_amount" if len(sol) == 1 else "L3_subset_sum"))
-    out += _commit_unique(book, "A", explanations)
+        wide = [(s.settlement_id, s.amount) for s in free_setl
+                if credit_within_window(s.settled_on, t.date)]
+        for sol in find_subset_sum(wide, t.credit_paise, max_k=3):
+            rivals.append(([t.txn_id], sol))
+    out += _commit_unique(book, "A", explanations, rivals)
     return out
 
 

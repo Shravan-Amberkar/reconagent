@@ -158,7 +158,7 @@ def test_store_refuses_reuse_and_edits():
             st.db.execute("UPDATE matches SET source='human'")
 
 
-@pytest.mark.parametrize("seed", [1, 2, 3])
+@pytest.mark.parametrize("seed", [1, 2, 3, 4, 5, 6, 7, 8])
 def test_deterministic_never_false_matches(seed, tmp_path):
     write(generate(seed, payments=250), tmp_path)
     book = Book.load(tmp_path)
@@ -175,3 +175,21 @@ def test_name_evidence_needs_contiguous_name():
     assert name_evidence("Myra Pillai", notes)
     assert not name_evidence("Myra Sharma", notes)        # tokens from two different people
     assert not name_evidence("Kabir Shah", "student: Kabir Sharma")
+
+
+def test_llm_schema_fallback_gated_by_invariant(tmp_path):
+    """A wrong LLM mapping is rejected, the failing rows are fed back, the corrected one wins."""
+    text = "Dt,Info,Out,In,Bal\n01/09/26,a,,100.00,100.00\n02/09/26,b,40.00,,60.00\n"
+    good = ingest.StatementSchema(header_row=0, date_col="Dt", narration_col="Info",
+                                  balance_col="Bal", date_format="%d/%m/%y",
+                                  sign_convention="split", debit_col="Out", credit_col="In")
+    bad = good.model_copy(update={"debit_col": "In", "credit_col": "Out"})
+    seen = []
+
+    def fake_llm(rows, feedback):
+        seen.append(feedback)
+        return bad if len(seen) == 1 else good
+
+    schema, txns, src = ingest.infer_statement_schema(text, llm=fake_llm, use_cache=False)
+    assert src == "llm" and schema == good and len(txns) == 2
+    assert seen[0] is None and seen[1]                      # failures fed back on retry
