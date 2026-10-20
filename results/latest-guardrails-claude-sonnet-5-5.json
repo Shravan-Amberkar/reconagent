@@ -1,0 +1,13 @@
+{
+ "challenger_found_alternative": 14,
+ "declared_unmatchable:ambiguous_twin": 17,
+ "declared_unmatchable:erp_typo": 20,
+ "declared_unmatchable:negative_control": 9,
+ "exceptions": 140,
+ "hypotheses": 95,
+ "outcome:escalated": 46,
+ "outcome:matched": 94,
+ "self_corrected_after_rejection": 1,
+ "verifier_rejections": 1,
+ "violation:level": 1
+}

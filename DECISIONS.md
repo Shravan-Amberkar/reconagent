@@ -80,6 +80,20 @@ Short log of design choices, deviations from the original spec, and what was cut
    decoy looked unique. Fixed by counting competing claimants over the full verifier window. The
    eval's negative-control leakage metric surfaced it; it now reads 0 across 10 seeds.
 
+3. **Live run: the verifier was missing a UTR rule.** Two settlements happened to share an amount
+   (₹48,820) and two truncated credits landed the same day. The agent reasoned correctly from the
+   UTR prefix, but the verifier didn't check prefixes, so the swapped assignment also "verified"
+   and the challenger escalated both. Fixed with a UTR-consistency rule, most-constrained-first
+   ordering (most specific UTR resolves first), and a rule that a rival claimant only counts as
+   ambiguity if the exception has another valid explanation of its own. Escalation precision went
+   from 0.89 to 1.0.
+
+## Models
+
+Sonnet 5.5 for hypothesis and challenger, Haiku 5.5 for schema inference — all ids in
+`recon/llm_cache.py`, env-overridable. Full 3-seed run cost ~$11 uncached, ~3.5 LLM calls per
+exception, p50 ~9 s per exception.
+
 ## Cut
 
 PDF statements, multi-merchant, live test-mode pull, Tally/Zoho export, embeddings — see README.

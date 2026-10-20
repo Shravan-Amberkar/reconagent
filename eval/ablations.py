@@ -52,9 +52,10 @@ def main():
     for name, flags in CONFIGS:
         if only and name not in only:
             continue
-        ns = SimpleNamespace(seeds=a.seeds, payments=a.payments, bank_format="A",
-                             deterministic_only=False, no_verifier=False, no_challenger=False,
-                             no_feedback=False, offline=a.offline, **flags)
+        base = dict(seeds=a.seeds, payments=a.payments, bank_format="A",
+                    deterministic_only=False, no_verifier=False, no_challenger=False,
+                    no_feedback=False, offline=a.offline)
+        ns = SimpleNamespace(**{**base, **flags})
         rows[name] = run(ns)
         print(f"done {name}")
     out = Path("results")

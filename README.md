@@ -1,5 +1,7 @@
 # ReconAgent — agentic 3-way reconciliation for payment-gateway merchants
 
+Data mirrors Razorpay's Settlement Recon API; all of it is synthetic.
+
 A merchant receives money as **settlements**: the gateway batches many payments, subtracts fees
 and 18% GST on the fees, nets off refunds and chargebacks, and sends one bank credit — with a
 UTR that the bank often truncates — on T+N days. Finance then has to answer, usually in Excel:
@@ -55,20 +57,75 @@ negative-control leakage: **0** · escalations: 0 · escalation precision: None
 ### Full system
 
 <!-- BEGIN FULL -->
-_Not yet generated — run `python -m eval.run_eval` (full)._
+### full · seeds 1..3 · 250 payments/seed · model claude-sonnet-5-5
+| scope | items | matchable | correct | false | escalated | unmatched | auto-match | false-match |
+|---|---|---|---|---|---|---|---|---|
+| A | 86 | 71 | 71 | 0 | 9 | 6 | 100.0% | 0.0% |
+| B | 671 | 634 | 634 | 0 | 37 | 0 | 100.0% | 0.0% |
+| A:chargeback | 6 | 6 | 6 | 0 | 0 | 0 | 100.0% | 0.0% |
+| A:clean | 35 | 35 | 35 | 0 | 0 | 0 | 100.0% | 0.0% |
+| A:duplicate_entry | 6 | 0 | 0 | 0 | 0 | 6 | 0.0% | 0.0% |
+| A:holiday_shift | 8 | 8 | 8 | 0 | 0 | 0 | 100.0% | 0.0% |
+| A:negative_control | 9 | 0 | 0 | 0 | 9 | 0 | 0.0% | 0.0% |
+| A:netted_refund | 6 | 6 | 6 | 0 | 0 | 0 | 100.0% | 0.0% |
+| A:split_settlement | 9 | 9 | 9 | 0 | 0 | 0 | 100.0% | 0.0% |
+| A:utr_truncated | 7 | 7 | 7 | 0 | 0 | 0 | 100.0% | 0.0% |
+| B:ambiguous_twin | 17 | 0 | 0 | 0 | 17 | 0 | 0.0% | 0.0% |
+| B:clean | 379 | 379 | 379 | 0 | 0 | 0 | 100.0% | 0.0% |
+| B:erp_typo | 20 | 0 | 0 | 0 | 20 | 0 | 0.0% | 0.0% |
+| B:lump_sum | 24 | 24 | 24 | 0 | 0 | 0 | 100.0% | 0.0% |
+| B:many_to_one | 49 | 49 | 49 | 0 | 0 | 0 | 100.0% | 0.0% |
+| B:name_only | 46 | 46 | 46 | 0 | 0 | 0 | 100.0% | 0.0% |
+| B:partial_payment | 121 | 121 | 121 | 0 | 0 | 0 | 100.0% | 0.0% |
+| B:prompt_injection | 15 | 15 | 15 | 0 | 0 | 0 | 100.0% | 0.0% |
+
+negative-control leakage: **0** · escalations: 46 · escalation precision: 1.0
 <!-- END FULL -->
 
 ### Ablations — the same seeds, one guardrail removed at a time
 
 <!-- BEGIN ABLATIONS -->
-_Not yet generated — run `python -m eval.ablations` with an API key (or a filled cache)._
+| config | auto-match B | auto-match A | false matches | false-match rate (B) | neg-control leakage | escalations | esc. precision | twins/typos force-matched | LLM calls/exception |
+|---|---|---|---|---|---|---|---|---|---|
+| deterministic-only | 86.6% | 87.3% | 0 | 0.0% | 0 | 0 | None | 0 | 0 |
+| full | 100.0% | 100.0% | 0 | 0.0% | 0 | 46 | 1.0 | 0 | 3.53 |
+| no-verifier | 100.0% | 100.0% | 0 | 0.0% | 0 | 46 | 1.0 | 0 | 3.52 |
+| no-challenger | 100.0% | 100.0% | 0 | 0.0% | 0 | 46 | 1.0 | 0 | 2.03 |
+| no-feedback | 100.0% | 100.0% | 0 | 0.0% | 0 | 46 | 1.0 | 0 | 3.53 |
 <!-- END ABLATIONS -->
 
-What the ablations are designed to show, and what to do if they don't: removing the **verifier**
-should let wrong matches through; removing the **challenger** should force-match ambiguous twins;
-removing **feedback** should lower the agent's auto-match rate. If the measured numbers don't tell
-that story, the README reports what they do say — the generator is never tuned to flatter the
-system.
+**The ablations did not tell the story they were designed to tell — and that is the finding.**
+They were built expecting no-verifier → false matches, no-challenger → force-matched twins,
+no-feedback → lower auto-match. On Claude Sonnet 5.5, all four configurations scored identically:
+the model never proposed a match the verifier would have rejected. It declared every ERP typo,
+every ambiguous twin and every negative control unmatchable *on its own* (46 of 46 escalations),
+and it ignored all 15 prompt-injection attempts. The generator was not changed to manufacture a
+failure.
+
+What the guardrails actually did in the full run (`results/latest-guardrails-claude-sonnet-5-5.json`):
+
+| | count (3 seeds, 140 exceptions) |
+|---|---|
+| Hypotheses submitted | 95 |
+| Rejected by the verifier, then self-corrected and committed | 1 |
+| Alternative explanations proposed by the LLM challenger | 14 — **all 14 rejected by the verifier** |
+| Escalated: declared unmatchable by the model | 46 (17 twins, 20 typos, 9 negative controls) |
+| False matches | **0** |
+
+So on a strong model the guardrails are insurance rather than a crutch: they cost almost nothing
+when the model is right, and the verifier still did real work — it falsified every one of the
+challenger's 14 proposed alternatives. Two caveats keep this honest:
+
+- **The guardrails are proven independently of model quality** by the unit tests: with a scripted
+  model that obeys the injection, removing the verifier commits the decoy invoice
+  (`test_no_verifier_commits_garbage`); removing the challenger force-matches a twin
+  (`test_no_challenger_force_matches_twin`). They exist for the day the model is wrong — a
+  weaker or cheaper model, a new prompt, a distribution the benchmark doesn't cover.
+- **A weaker-model ablation (Haiku 4.5) was started and cut short** by the API spend limit
+  before it finished. Re-run with `RECON_HYPOTHESIS_MODEL=claude-haiku-4-5 python -m eval.ablations`.
+
+The guardrails *did* change outcomes while the system was being built — three times, on real
+cases. See `DECISIONS.md` § "Bugs the guardrails caught".
 
 ---
 
