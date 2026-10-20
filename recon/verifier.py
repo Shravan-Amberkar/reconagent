@@ -27,13 +27,13 @@ def _norm(s: str) -> str:
 def name_evidence(name: str, notes_text: str) -> bool:
     """Does the payment's free text actually name this customer?
 
-    Every name token must appear as a whole word, with a strict fuzzy fallback for a
-    single typo. "Kabir Shah" does NOT match notes that say "Kabir Sharma"."""
+    The full name must appear as a contiguous phrase, with a strict fuzzy fallback for one
+    typo. Tokens scattered across different people do NOT count: notes naming "Myra Pillai,
+    Saanvi Sharma" are not evidence for "Myra Sharma"."""
     n, t = _norm(name), _norm(notes_text)
     if not n:
         return False
-    words = set(re.findall(r"[a-z]+", t))
-    if all(tok in words for tok in n.split()):
+    if re.search(r"(?<![a-z])" + re.escape(n) + r"(?![a-z])", t):
         return True
     return fuzz.partial_ratio(n, t) >= NAME_MATCH
 

@@ -167,3 +167,11 @@ def test_deterministic_never_false_matches(seed, tmp_path):
     assert res["levels"]["A"]["false"] == 0
     assert res["levels"]["B"]["false"] == 0
     assert res["negative_control_leakage"] == 0
+
+
+def test_name_evidence_needs_contiguous_name():
+    from recon.verifier import name_evidence
+    notes = "students: Myra Pillai, Saanvi Sharma"
+    assert name_evidence("Myra Pillai", notes)
+    assert not name_evidence("Myra Sharma", notes)        # tokens from two different people
+    assert not name_evidence("Kabir Shah", "student: Kabir Sharma")
