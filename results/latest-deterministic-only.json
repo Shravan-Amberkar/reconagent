@@ -1,0 +1,1181 @@
+{
+ "config": {
+  "bank_format": "A",
+  "model": "claude-sonnet-5",
+  "name": "deterministic-only",
+  "payments": 250,
+  "seeds": "1..5"
+ },
+ "cost": {
+  "cache_hits": 0,
+  "cache_misses": 0,
+  "exceptions": 0,
+  "input_tokens": 0,
+  "inr_per_1000_bank_lines": 0.0,
+  "latency_p50_s": null,
+  "latency_p95_s": null,
+  "llm_calls": 0,
+  "llm_calls_per_exception": 0,
+  "output_tokens": 0,
+  "usd": 0.0
+ },
+ "escalation_precision": null,
+ "escalations": 0,
+ "levels": {
+  "A": {
+   "auto_match_rate": 0.8718,
+   "correct": 102,
+   "escalated": 0,
+   "false": 0,
+   "false_match_rate": 0.0,
+   "items": 142,
+   "matchable": 117,
+   "unmatched": 40
+  },
+  "B": {
+   "auto_match_rate": 0.8636,
+   "correct": 912,
+   "escalated": 0,
+   "false": 0,
+   "false_match_rate": 0.0,
+   "items": 1128,
+   "matchable": 1056,
+   "unmatched": 216
+  }
+ },
+ "negative_control_leakage": 0,
+ "per_case": {
+  "A:chargeback": {
+   "auto_match_rate": 1.0,
+   "correct": 10,
+   "escalated": 0,
+   "false": 0,
+   "false_match_rate": 0.0,
+   "items": 10,
+   "matchable": 10,
+   "unmatched": 0
+  },
+  "A:clean": {
+   "auto_match_rate": 1.0,
+   "correct": 58,
+   "escalated": 0,
+   "false": 0,
+   "false_match_rate": 0.0,
+   "items": 58,
+   "matchable": 58,
+   "unmatched": 0
+  },
+  "A:duplicate_entry": {
+   "auto_match_rate": 0.0,
+   "correct": 0,
+   "escalated": 0,
+   "false": 0,
+   "false_match_rate": 0.0,
+   "items": 10,
+   "matchable": 0,
+   "unmatched": 10
+  },
+  "A:holiday_shift": {
+   "auto_match_rate": 0.0,
+   "correct": 0,
+   "escalated": 0,
+   "false": 0,
+   "false_match_rate": 0.0,
+   "items": 14,
+   "matchable": 14,
+   "unmatched": 14
+  },
+  "A:negative_control": {
+   "auto_match_rate": 0.0,
+   "correct": 0,
+   "escalated": 0,
+   "false": 0,
+   "false_match_rate": 0.0,
+   "items": 15,
+   "matchable": 0,
+   "unmatched": 15
+  },
+  "A:netted_refund": {
+   "auto_match_rate": 1.0,
+   "correct": 10,
+   "escalated": 0,
+   "false": 0,
+   "false_match_rate": 0.0,
+   "items": 10,
+   "matchable": 10,
+   "unmatched": 0
+  },
+  "A:split_settlement": {
+   "auto_match_rate": 1.0,
+   "correct": 15,
+   "escalated": 0,
+   "false": 0,
+   "false_match_rate": 0.0,
+   "items": 15,
+   "matchable": 15,
+   "unmatched": 0
+  },
+  "A:utr_truncated": {
+   "auto_match_rate": 0.9,
+   "correct": 9,
+   "escalated": 0,
+   "false": 0,
+   "false_match_rate": 0.0,
+   "items": 10,
+   "matchable": 10,
+   "unmatched": 1
+  },
+  "B:ambiguous_twin": {
+   "auto_match_rate": 0.0,
+   "correct": 0,
+   "escalated": 0,
+   "false": 0,
+   "false_match_rate": 0.0,
+   "items": 31,
+   "matchable": 0,
+   "unmatched": 31
+  },
+  "B:clean": {
+   "auto_match_rate": 1.0,
+   "correct": 613,
+   "escalated": 0,
+   "false": 0,
+   "false_match_rate": 0.0,
+   "items": 613,
+   "matchable": 613,
+   "unmatched": 0
+  },
+  "B:erp_typo": {
+   "auto_match_rate": 0.0,
+   "correct": 0,
+   "escalated": 0,
+   "false": 0,
+   "false_match_rate": 0.0,
+   "items": 41,
+   "matchable": 0,
+   "unmatched": 41
+  },
+  "B:lump_sum": {
+   "auto_match_rate": 0.0,
+   "correct": 0,
+   "escalated": 0,
+   "false": 0,
+   "false_match_rate": 0.0,
+   "items": 48,
+   "matchable": 48,
+   "unmatched": 48
+  },
+  "B:many_to_one": {
+   "auto_match_rate": 1.0,
+   "correct": 79,
+   "escalated": 0,
+   "false": 0,
+   "false_match_rate": 0.0,
+   "items": 79,
+   "matchable": 79,
+   "unmatched": 0
+  },
+  "B:name_only": {
+   "auto_match_rate": 0.0,
+   "correct": 0,
+   "escalated": 0,
+   "false": 0,
+   "false_match_rate": 0.0,
+   "items": 70,
+   "matchable": 70,
+   "unmatched": 70
+  },
+  "B:partial_payment": {
+   "auto_match_rate": 1.0,
+   "correct": 220,
+   "escalated": 0,
+   "false": 0,
+   "false_match_rate": 0.0,
+   "items": 220,
+   "matchable": 220,
+   "unmatched": 0
+  },
+  "B:prompt_injection": {
+   "auto_match_rate": 0.0,
+   "correct": 0,
+   "escalated": 0,
+   "false": 0,
+   "false_match_rate": 0.0,
+   "items": 26,
+   "matchable": 26,
+   "unmatched": 26
+  }
+ },
+ "per_seed": {
+  "1": {
+   "by_source": {
+    "agent": 0,
+    "deterministic": 186,
+    "human": 0
+   },
+   "escalation_precision": null,
+   "escalations": 0,
+   "levels": {
+    "A": {
+     "auto_match_rate": 0.875,
+     "correct": 21,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 29,
+     "matchable": 24,
+     "unmatched": 8
+    },
+    "B": {
+     "auto_match_rate": 0.8972,
+     "correct": 192,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 227,
+     "matchable": 214,
+     "unmatched": 35
+    }
+   },
+   "negative_control_leakage": 0,
+   "per_case": {
+    "A:chargeback": {
+     "auto_match_rate": 1.0,
+     "correct": 2,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 2,
+     "matchable": 2,
+     "unmatched": 0
+    },
+    "A:clean": {
+     "auto_match_rate": 1.0,
+     "correct": 12,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 12,
+     "matchable": 12,
+     "unmatched": 0
+    },
+    "A:duplicate_entry": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 2,
+     "matchable": 0,
+     "unmatched": 2
+    },
+    "A:holiday_shift": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 2,
+     "matchable": 2,
+     "unmatched": 2
+    },
+    "A:negative_control": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 3,
+     "matchable": 0,
+     "unmatched": 3
+    },
+    "A:netted_refund": {
+     "auto_match_rate": 1.0,
+     "correct": 2,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 2,
+     "matchable": 2,
+     "unmatched": 0
+    },
+    "A:split_settlement": {
+     "auto_match_rate": 1.0,
+     "correct": 3,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 3,
+     "matchable": 3,
+     "unmatched": 0
+    },
+    "A:utr_truncated": {
+     "auto_match_rate": 0.6667,
+     "correct": 2,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 3,
+     "matchable": 3,
+     "unmatched": 1
+    },
+    "B:ambiguous_twin": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 6,
+     "matchable": 0,
+     "unmatched": 6
+    },
+    "B:clean": {
+     "auto_match_rate": 1.0,
+     "correct": 129,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 129,
+     "matchable": 129,
+     "unmatched": 0
+    },
+    "B:erp_typo": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 7,
+     "matchable": 0,
+     "unmatched": 7
+    },
+    "B:lump_sum": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 5,
+     "matchable": 5,
+     "unmatched": 5
+    },
+    "B:many_to_one": {
+     "auto_match_rate": 1.0,
+     "correct": 17,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 17,
+     "matchable": 17,
+     "unmatched": 0
+    },
+    "B:name_only": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 14,
+     "matchable": 14,
+     "unmatched": 14
+    },
+    "B:partial_payment": {
+     "auto_match_rate": 1.0,
+     "correct": 46,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 46,
+     "matchable": 46,
+     "unmatched": 0
+    },
+    "B:prompt_injection": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 3,
+     "matchable": 3,
+     "unmatched": 3
+    }
+   }
+  },
+  "2": {
+   "by_source": {
+    "agent": 0,
+    "deterministic": 171,
+    "human": 0
+   },
+   "escalation_precision": null,
+   "escalations": 0,
+   "levels": {
+    "A": {
+     "auto_match_rate": 0.8696,
+     "correct": 20,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 28,
+     "matchable": 23,
+     "unmatched": 8
+    },
+    "B": {
+     "auto_match_rate": 0.8286,
+     "correct": 174,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 223,
+     "matchable": 210,
+     "unmatched": 49
+    }
+   },
+   "negative_control_leakage": 0,
+   "per_case": {
+    "A:chargeback": {
+     "auto_match_rate": 1.0,
+     "correct": 2,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 2,
+     "matchable": 2,
+     "unmatched": 0
+    },
+    "A:clean": {
+     "auto_match_rate": 1.0,
+     "correct": 10,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 10,
+     "matchable": 10,
+     "unmatched": 0
+    },
+    "A:duplicate_entry": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 2,
+     "matchable": 0,
+     "unmatched": 2
+    },
+    "A:holiday_shift": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 3,
+     "matchable": 3,
+     "unmatched": 3
+    },
+    "A:negative_control": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 3,
+     "matchable": 0,
+     "unmatched": 3
+    },
+    "A:netted_refund": {
+     "auto_match_rate": 1.0,
+     "correct": 2,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 2,
+     "matchable": 2,
+     "unmatched": 0
+    },
+    "A:split_settlement": {
+     "auto_match_rate": 1.0,
+     "correct": 3,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 3,
+     "matchable": 3,
+     "unmatched": 0
+    },
+    "A:utr_truncated": {
+     "auto_match_rate": 1.0,
+     "correct": 3,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 3,
+     "matchable": 3,
+     "unmatched": 0
+    },
+    "B:ambiguous_twin": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 4,
+     "matchable": 0,
+     "unmatched": 4
+    },
+    "B:clean": {
+     "auto_match_rate": 1.0,
+     "correct": 123,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 123,
+     "matchable": 123,
+     "unmatched": 0
+    },
+    "B:erp_typo": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 9,
+     "matchable": 0,
+     "unmatched": 9
+    },
+    "B:lump_sum": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 12,
+     "matchable": 12,
+     "unmatched": 12
+    },
+    "B:many_to_one": {
+     "auto_match_rate": 1.0,
+     "correct": 12,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 12,
+     "matchable": 12,
+     "unmatched": 0
+    },
+    "B:name_only": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 18,
+     "matchable": 18,
+     "unmatched": 18
+    },
+    "B:partial_payment": {
+     "auto_match_rate": 1.0,
+     "correct": 39,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 39,
+     "matchable": 39,
+     "unmatched": 0
+    },
+    "B:prompt_injection": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 6,
+     "matchable": 6,
+     "unmatched": 6
+    }
+   }
+  },
+  "3": {
+   "by_source": {
+    "agent": 0,
+    "deterministic": 183,
+    "human": 0
+   },
+   "escalation_precision": null,
+   "escalations": 0,
+   "levels": {
+    "A": {
+     "auto_match_rate": 0.875,
+     "correct": 21,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 29,
+     "matchable": 24,
+     "unmatched": 8
+    },
+    "B": {
+     "auto_match_rate": 0.8714,
+     "correct": 183,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 221,
+     "matchable": 210,
+     "unmatched": 38
+    }
+   },
+   "negative_control_leakage": 0,
+   "per_case": {
+    "A:chargeback": {
+     "auto_match_rate": 1.0,
+     "correct": 2,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 2,
+     "matchable": 2,
+     "unmatched": 0
+    },
+    "A:clean": {
+     "auto_match_rate": 1.0,
+     "correct": 13,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 13,
+     "matchable": 13,
+     "unmatched": 0
+    },
+    "A:duplicate_entry": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 2,
+     "matchable": 0,
+     "unmatched": 2
+    },
+    "A:holiday_shift": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 3,
+     "matchable": 3,
+     "unmatched": 3
+    },
+    "A:negative_control": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 3,
+     "matchable": 0,
+     "unmatched": 3
+    },
+    "A:netted_refund": {
+     "auto_match_rate": 1.0,
+     "correct": 2,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 2,
+     "matchable": 2,
+     "unmatched": 0
+    },
+    "A:split_settlement": {
+     "auto_match_rate": 1.0,
+     "correct": 3,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 3,
+     "matchable": 3,
+     "unmatched": 0
+    },
+    "A:utr_truncated": {
+     "auto_match_rate": 1.0,
+     "correct": 1,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 1,
+     "matchable": 1,
+     "unmatched": 0
+    },
+    "B:ambiguous_twin": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 7,
+     "matchable": 0,
+     "unmatched": 7
+    },
+    "B:clean": {
+     "auto_match_rate": 1.0,
+     "correct": 127,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 127,
+     "matchable": 127,
+     "unmatched": 0
+    },
+    "B:erp_typo": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 4,
+     "matchable": 0,
+     "unmatched": 4
+    },
+    "B:lump_sum": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 7,
+     "matchable": 7,
+     "unmatched": 7
+    },
+    "B:many_to_one": {
+     "auto_match_rate": 1.0,
+     "correct": 20,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 20,
+     "matchable": 20,
+     "unmatched": 0
+    },
+    "B:name_only": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 14,
+     "matchable": 14,
+     "unmatched": 14
+    },
+    "B:partial_payment": {
+     "auto_match_rate": 1.0,
+     "correct": 36,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 36,
+     "matchable": 36,
+     "unmatched": 0
+    },
+    "B:prompt_injection": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 6,
+     "matchable": 6,
+     "unmatched": 6
+    }
+   }
+  },
+  "4": {
+   "by_source": {
+    "agent": 0,
+    "deterministic": 176,
+    "human": 0
+   },
+   "escalation_precision": null,
+   "escalations": 0,
+   "levels": {
+    "A": {
+     "auto_match_rate": 0.8696,
+     "correct": 20,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 28,
+     "matchable": 23,
+     "unmatched": 8
+    },
+    "B": {
+     "auto_match_rate": 0.8578,
+     "correct": 181,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 225,
+     "matchable": 211,
+     "unmatched": 44
+    }
+   },
+   "negative_control_leakage": 0,
+   "per_case": {
+    "A:chargeback": {
+     "auto_match_rate": 1.0,
+     "correct": 2,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 2,
+     "matchable": 2,
+     "unmatched": 0
+    },
+    "A:clean": {
+     "auto_match_rate": 1.0,
+     "correct": 11,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 11,
+     "matchable": 11,
+     "unmatched": 0
+    },
+    "A:duplicate_entry": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 2,
+     "matchable": 0,
+     "unmatched": 2
+    },
+    "A:holiday_shift": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 3,
+     "matchable": 3,
+     "unmatched": 3
+    },
+    "A:negative_control": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 3,
+     "matchable": 0,
+     "unmatched": 3
+    },
+    "A:netted_refund": {
+     "auto_match_rate": 1.0,
+     "correct": 2,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 2,
+     "matchable": 2,
+     "unmatched": 0
+    },
+    "A:split_settlement": {
+     "auto_match_rate": 1.0,
+     "correct": 3,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 3,
+     "matchable": 3,
+     "unmatched": 0
+    },
+    "A:utr_truncated": {
+     "auto_match_rate": 1.0,
+     "correct": 2,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 2,
+     "matchable": 2,
+     "unmatched": 0
+    },
+    "B:ambiguous_twin": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 6,
+     "matchable": 0,
+     "unmatched": 6
+    },
+    "B:clean": {
+     "auto_match_rate": 1.0,
+     "correct": 123,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 123,
+     "matchable": 123,
+     "unmatched": 0
+    },
+    "B:erp_typo": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 8,
+     "matchable": 0,
+     "unmatched": 8
+    },
+    "B:lump_sum": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 15,
+     "matchable": 15,
+     "unmatched": 15
+    },
+    "B:many_to_one": {
+     "auto_match_rate": 1.0,
+     "correct": 14,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 14,
+     "matchable": 14,
+     "unmatched": 0
+    },
+    "B:name_only": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 9,
+     "matchable": 9,
+     "unmatched": 9
+    },
+    "B:partial_payment": {
+     "auto_match_rate": 1.0,
+     "correct": 44,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 44,
+     "matchable": 44,
+     "unmatched": 0
+    },
+    "B:prompt_injection": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 6,
+     "matchable": 6,
+     "unmatched": 6
+    }
+   }
+  },
+  "5": {
+   "by_source": {
+    "agent": 0,
+    "deterministic": 170,
+    "human": 0
+   },
+   "escalation_precision": null,
+   "escalations": 0,
+   "levels": {
+    "A": {
+     "auto_match_rate": 0.8696,
+     "correct": 20,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 28,
+     "matchable": 23,
+     "unmatched": 8
+    },
+    "B": {
+     "auto_match_rate": 0.8626,
+     "correct": 182,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 232,
+     "matchable": 211,
+     "unmatched": 50
+    }
+   },
+   "negative_control_leakage": 0,
+   "per_case": {
+    "A:chargeback": {
+     "auto_match_rate": 1.0,
+     "correct": 2,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 2,
+     "matchable": 2,
+     "unmatched": 0
+    },
+    "A:clean": {
+     "auto_match_rate": 1.0,
+     "correct": 12,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 12,
+     "matchable": 12,
+     "unmatched": 0
+    },
+    "A:duplicate_entry": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 2,
+     "matchable": 0,
+     "unmatched": 2
+    },
+    "A:holiday_shift": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 3,
+     "matchable": 3,
+     "unmatched": 3
+    },
+    "A:negative_control": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 3,
+     "matchable": 0,
+     "unmatched": 3
+    },
+    "A:netted_refund": {
+     "auto_match_rate": 1.0,
+     "correct": 2,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 2,
+     "matchable": 2,
+     "unmatched": 0
+    },
+    "A:split_settlement": {
+     "auto_match_rate": 1.0,
+     "correct": 3,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 3,
+     "matchable": 3,
+     "unmatched": 0
+    },
+    "A:utr_truncated": {
+     "auto_match_rate": 1.0,
+     "correct": 1,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 1,
+     "matchable": 1,
+     "unmatched": 0
+    },
+    "B:ambiguous_twin": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 8,
+     "matchable": 0,
+     "unmatched": 8
+    },
+    "B:clean": {
+     "auto_match_rate": 1.0,
+     "correct": 111,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 111,
+     "matchable": 111,
+     "unmatched": 0
+    },
+    "B:erp_typo": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 13,
+     "matchable": 0,
+     "unmatched": 13
+    },
+    "B:lump_sum": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 9,
+     "matchable": 9,
+     "unmatched": 9
+    },
+    "B:many_to_one": {
+     "auto_match_rate": 1.0,
+     "correct": 16,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 16,
+     "matchable": 16,
+     "unmatched": 0
+    },
+    "B:name_only": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 15,
+     "matchable": 15,
+     "unmatched": 15
+    },
+    "B:partial_payment": {
+     "auto_match_rate": 1.0,
+     "correct": 55,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 55,
+     "matchable": 55,
+     "unmatched": 0
+    },
+    "B:prompt_injection": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 5,
+     "matchable": 5,
+     "unmatched": 5
+    }
+   }
+  }
+ }
+}

@@ -7,6 +7,6 @@ data/runs/
 data/schema_cache.json
 results/*
 !results/.gitkeep
-!results/latest.json
+!results/latest-*.json
 !results/ablations.json
 !results/ablations.md

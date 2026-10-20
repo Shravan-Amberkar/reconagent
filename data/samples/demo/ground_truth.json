@@ -1,0 +1,2183 @@
+{
+ "bank": {
+  "bt_0001": {
+   "case_type": "clean",
+   "expect": "match",
+   "settlement_ids": [
+    "setl_AvTQKYUc0fqqKt"
+   ]
+  },
+  "bt_0002": {
+   "case_type": "debit",
+   "expect": "no_match",
+   "settlement_ids": null
+  },
+  "bt_0003": {
+   "case_type": "negative_control",
+   "expect": "no_match",
+   "settlement_ids": null
+  },
+  "bt_0004": {
+   "case_type": "negative_control",
+   "expect": "no_match",
+   "settlement_ids": null
+  },
+  "bt_0005": {
+   "case_type": "holiday_shift",
+   "expect": "match",
+   "settlement_ids": [
+    "setl_wjQ5QXANYqhAIn"
+   ]
+  },
+  "bt_0006": {
+   "case_type": "utr_truncated",
+   "expect": "match",
+   "settlement_ids": [
+    "setl_dXVIpLW9BtJO1V"
+   ]
+  },
+  "bt_0007": {
+   "case_type": "clean",
+   "expect": "match",
+   "settlement_ids": [
+    "setl_15ZFRdXk8YBvtp"
+   ]
+  },
+  "bt_0008": {
+   "case_type": "clean",
+   "expect": "match",
+   "settlement_ids": [
+    "setl_qvPgxxF8ydr6UM"
+   ]
+  },
+  "bt_0009": {
+   "case_type": "split_settlement",
+   "expect": "match",
+   "settlement_ids": [
+    "setl_36lWR7FC37Twhw",
+    "setl_ORESrElEDHwRZ0"
+   ]
+  },
+  "bt_0010": {
+   "case_type": "clean",
+   "expect": "match",
+   "settlement_ids": [
+    "setl_jj1VAM4whQSIXo"
+   ]
+  },
+  "bt_0011": {
+   "case_type": "netted_refund",
+   "expect": "match",
+   "settlement_ids": [
+    "setl_HtEYZk6oGDpQT0"
+   ]
+  },
+  "bt_0012": {
+   "case_type": "debit",
+   "expect": "no_match",
+   "settlement_ids": null
+  },
+  "bt_0013": {
+   "case_type": "negative_control",
+   "expect": "no_match",
+   "settlement_ids": null
+  },
+  "bt_0014": {
+   "case_type": "holiday_shift",
+   "expect": "match",
+   "settlement_ids": [
+    "setl_4otnhiTZwvR2N6"
+   ]
+  },
+  "bt_0015": {
+   "case_type": "clean",
+   "expect": "match",
+   "settlement_ids": [
+    "setl_WiiKFFQ5CLCyvz"
+   ]
+  },
+  "bt_0016": {
+   "case_type": "clean",
+   "expect": "match",
+   "settlement_ids": [
+    "setl_KfOeSlDMLnfOvp"
+   ]
+  },
+  "bt_0017": {
+   "case_type": "duplicate_entry",
+   "expect": "no_match",
+   "settlement_ids": null
+  },
+  "bt_0018": {
+   "case_type": "clean",
+   "expect": "match",
+   "settlement_ids": [
+    "setl_dfHwmLEyMVMJfU"
+   ]
+  },
+  "bt_0019": {
+   "case_type": "clean",
+   "expect": "match",
+   "settlement_ids": [
+    "setl_DSkkRXwBTDifHC"
+   ]
+  },
+  "bt_0020": {
+   "case_type": "split_settlement",
+   "expect": "match",
+   "settlement_ids": [
+    "setl_3be6i1xYd8j2LL",
+    "setl_gCEyICsxS1yv0O"
+   ]
+  },
+  "bt_0021": {
+   "case_type": "clean",
+   "expect": "match",
+   "settlement_ids": [
+    "setl_cx1DgEIAxPUTzh"
+   ]
+  },
+  "bt_0022": {
+   "case_type": "clean",
+   "expect": "match",
+   "settlement_ids": [
+    "setl_yBl6Ump1suvf0l"
+   ]
+  },
+  "bt_0023": {
+   "case_type": "debit",
+   "expect": "no_match",
+   "settlement_ids": null
+  },
+  "bt_0024": {
+   "case_type": "split_settlement",
+   "expect": "match",
+   "settlement_ids": [
+    "setl_0sbEqbCJT9ElGi",
+    "setl_Xkcmb4ipivXEdH"
+   ]
+  },
+  "bt_0025": {
+   "case_type": "utr_truncated",
+   "expect": "match",
+   "settlement_ids": [
+    "setl_VFdOyECGbwDzUZ"
+   ]
+  },
+  "bt_0026": {
+   "case_type": "netted_refund",
+   "expect": "match",
+   "settlement_ids": [
+    "setl_2CjnLFnpfjeMz7"
+   ]
+  },
+  "bt_0027": {
+   "case_type": "chargeback",
+   "expect": "match",
+   "settlement_ids": [
+    "setl_mras59wFzxBHG5"
+   ]
+  },
+  "bt_0028": {
+   "case_type": "utr_truncated",
+   "expect": "match",
+   "settlement_ids": [
+    "setl_IcdmtM0KD6BWRi"
+   ]
+  },
+  "bt_0029": {
+   "case_type": "chargeback",
+   "expect": "match",
+   "settlement_ids": [
+    "setl_APM8h6wgE7ubTD"
+   ]
+  },
+  "bt_0030": {
+   "case_type": "debit",
+   "expect": "no_match",
+   "settlement_ids": null
+  },
+  "bt_0031": {
+   "case_type": "holiday_shift",
+   "expect": "match",
+   "settlement_ids": [
+    "setl_ClhyZj5smVA7Uz"
+   ]
+  },
+  "bt_0032": {
+   "case_type": "clean",
+   "expect": "match",
+   "settlement_ids": [
+    "setl_vnEcQJBElJictF"
+   ]
+  },
+  "bt_0033": {
+   "case_type": "duplicate_entry",
+   "expect": "no_match",
+   "settlement_ids": null
+  }
+ },
+ "month": "2026-09",
+ "opening_balance": 92355400,
+ "payments": {
+  "pay_00m3ZJ3FvMlhfw": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00042"
+   ],
+   "payment_group": [
+    "pay_00m3ZJ3FvMlhfw",
+    "pay_JLyw3V33bgpnlF",
+    "pay_zhDMwOH4OgAput"
+   ]
+  },
+  "pay_08joKhhn5eF1cW": {
+   "case_type": "lump_sum",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00176",
+    "INV-00177",
+    "INV-00178"
+   ],
+   "payment_group": [
+    "pay_08joKhhn5eF1cW"
+   ]
+  },
+  "pay_0ZQKdZQ3crYt80": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00023"
+   ],
+   "payment_group": [
+    "pay_0ZQKdZQ3crYt80"
+   ]
+  },
+  "pay_0bNIoV6L39toOL": {
+   "case_type": "lump_sum",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00140",
+    "INV-00141",
+    "INV-00142",
+    "INV-00143",
+    "INV-00144"
+   ],
+   "payment_group": [
+    "pay_0bNIoV6L39toOL"
+   ]
+  },
+  "pay_1FyHGFGqKKL9zX": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00100"
+   ],
+   "payment_group": [
+    "pay_1FyHGFGqKKL9zX"
+   ]
+  },
+  "pay_2GeV45mmFd1iFR": {
+   "case_type": "many_to_one",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00067",
+    "INV-00068",
+    "INV-00069"
+   ],
+   "payment_group": [
+    "pay_2GeV45mmFd1iFR"
+   ]
+  },
+  "pay_2HiGnY3rX3TFiJ": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00022"
+   ],
+   "payment_group": [
+    "pay_2HiGnY3rX3TFiJ"
+   ]
+  },
+  "pay_2i0FvY1xzcXRnX": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00157"
+   ],
+   "payment_group": [
+    "pay_2i0FvY1xzcXRnX",
+    "pay_DihndxgBY6PWhA",
+    "pay_opPOBKQMPzwmHz"
+   ]
+  },
+  "pay_2kM588IfDcWVmT": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00110"
+   ],
+   "payment_group": [
+    "pay_2kM588IfDcWVmT"
+   ]
+  },
+  "pay_3HiZnGzVOe0oxZ": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00078"
+   ],
+   "payment_group": [
+    "pay_3HiZnGzVOe0oxZ",
+    "pay_lwakgw1kaxThfr"
+   ]
+  },
+  "pay_4HDeFCqH57mAOr": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00101"
+   ],
+   "payment_group": [
+    "pay_4HDeFCqH57mAOr",
+    "pay_62U4QSR6TVSOAF",
+    "pay_XuDvcuHcE0FDGZ"
+   ]
+  },
+  "pay_4bsSvsU9XZ6htX": {
+   "case_type": "ambiguous_twin",
+   "expect": "escalate",
+   "invoice_ids": [
+    "INV-00003"
+   ],
+   "payment_group": [
+    "pay_4bsSvsU9XZ6htX"
+   ]
+  },
+  "pay_5TYvCVWKWKL63z": {
+   "case_type": "lump_sum",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00136",
+    "INV-00137",
+    "INV-00138"
+   ],
+   "payment_group": [
+    "pay_5TYvCVWKWKL63z"
+   ]
+  },
+  "pay_5pFXBk418ITF1P": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00133"
+   ],
+   "payment_group": [
+    "pay_5pFXBk418ITF1P",
+    "pay_hHJgqXWt3mmCzZ",
+    "pay_hj1aPuv6KOX1oT"
+   ]
+  },
+  "pay_62U4QSR6TVSOAF": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00101"
+   ],
+   "payment_group": [
+    "pay_4HDeFCqH57mAOr",
+    "pay_62U4QSR6TVSOAF",
+    "pay_XuDvcuHcE0FDGZ"
+   ]
+  },
+  "pay_63jf6Akfr4qUAg": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00159"
+   ],
+   "payment_group": [
+    "pay_63jf6Akfr4qUAg",
+    "pay_LGNm7Tli4yNWng"
+   ]
+  },
+  "pay_6TfH7GVwIXKXmH": {
+   "case_type": "many_to_one",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00114",
+    "INV-00115"
+   ],
+   "payment_group": [
+    "pay_6TfH7GVwIXKXmH"
+   ]
+  },
+  "pay_74gWTBle6bqGhd": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00131"
+   ],
+   "payment_group": [
+    "pay_74gWTBle6bqGhd"
+   ]
+  },
+  "pay_76cnT1OZTJh5CJ": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00035"
+   ],
+   "payment_group": [
+    "pay_76cnT1OZTJh5CJ"
+   ]
+  },
+  "pay_7rXErDHWTVeXJi": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00059"
+   ],
+   "payment_group": [
+    "pay_7rXErDHWTVeXJi"
+   ]
+  },
+  "pay_8Bt5Z5teTn7laC": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00187"
+   ],
+   "payment_group": [
+    "pay_8Bt5Z5teTn7laC",
+    "pay_KaWIvuRrCLcXIt"
+   ]
+  },
+  "pay_9Gxd1fllGjik3G": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00186"
+   ],
+   "payment_group": [
+    "pay_9Gxd1fllGjik3G"
+   ]
+  },
+  "pay_9HhKxZnLeJkDzZ": {
+   "case_type": "ambiguous_twin",
+   "expect": "escalate",
+   "invoice_ids": [
+    "INV-00033"
+   ],
+   "payment_group": [
+    "pay_9HhKxZnLeJkDzZ"
+   ]
+  },
+  "pay_9R0AeEusti8S61": {
+   "case_type": "name_only",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00051"
+   ],
+   "payment_group": [
+    "pay_9R0AeEusti8S61"
+   ]
+  },
+  "pay_9Tz2e5gtzpwffa": {
+   "case_type": "lump_sum",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00061",
+    "INV-00062",
+    "INV-00063",
+    "INV-00064"
+   ],
+   "payment_group": [
+    "pay_9Tz2e5gtzpwffa"
+   ]
+  },
+  "pay_9f4BFgv6wl0Lp6": {
+   "case_type": "ambiguous_twin",
+   "expect": "escalate",
+   "invoice_ids": [
+    "INV-00065"
+   ],
+   "payment_group": [
+    "pay_9f4BFgv6wl0Lp6"
+   ]
+  },
+  "pay_9tOVC78JMEf45n": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00025"
+   ],
+   "payment_group": [
+    "pay_9tOVC78JMEf45n"
+   ]
+  },
+  "pay_9zyI9HZPQk9Ggf": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00010"
+   ],
+   "payment_group": [
+    "pay_9zyI9HZPQk9Ggf"
+   ]
+  },
+  "pay_ALSskAPyPNIQhP": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00096"
+   ],
+   "payment_group": [
+    "pay_ALSskAPyPNIQhP"
+   ]
+  },
+  "pay_AQRSFKLxOgDKrB": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00150"
+   ],
+   "payment_group": [
+    "pay_AQRSFKLxOgDKrB"
+   ]
+  },
+  "pay_CFdCEwVgdAlBOe": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00043"
+   ],
+   "payment_group": [
+    "pay_CFdCEwVgdAlBOe"
+   ]
+  },
+  "pay_CQBz5BNEe8yLQE": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00124"
+   ],
+   "payment_group": [
+    "pay_CQBz5BNEe8yLQE"
+   ]
+  },
+  "pay_CyXor86qGJhbkV": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00195"
+   ],
+   "payment_group": [
+    "pay_CyXor86qGJhbkV"
+   ]
+  },
+  "pay_D1foHm9Xhl4KrV": {
+   "case_type": "ambiguous_twin",
+   "expect": "escalate",
+   "invoice_ids": [
+    "INV-00087"
+   ],
+   "payment_group": [
+    "pay_D1foHm9Xhl4KrV"
+   ]
+  },
+  "pay_D6LwfeXfZFXtqW": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00013"
+   ],
+   "payment_group": [
+    "pay_D6LwfeXfZFXtqW"
+   ]
+  },
+  "pay_DJwYY3ikjmJqRh": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00050"
+   ],
+   "payment_group": [
+    "pay_DJwYY3ikjmJqRh",
+    "pay_MiNsZZIdJw27oU"
+   ]
+  },
+  "pay_DcUVEmbGaKdIy9": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00112"
+   ],
+   "payment_group": [
+    "pay_DcUVEmbGaKdIy9"
+   ]
+  },
+  "pay_DgRNIHONdsig3A": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00048"
+   ],
+   "payment_group": [
+    "pay_DgRNIHONdsig3A",
+    "pay_MzTdeD9KA0ECOO",
+    "pay_iC1JVbWX3sA7xJ"
+   ]
+  },
+  "pay_DihndxgBY6PWhA": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00157"
+   ],
+   "payment_group": [
+    "pay_2i0FvY1xzcXRnX",
+    "pay_DihndxgBY6PWhA",
+    "pay_opPOBKQMPzwmHz"
+   ]
+  },
+  "pay_Do3S6wWYwA1ZLy": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00014"
+   ],
+   "payment_group": [
+    "pay_Do3S6wWYwA1ZLy"
+   ]
+  },
+  "pay_E0vuqI5udBz99o": {
+   "case_type": "ambiguous_twin",
+   "expect": "escalate",
+   "invoice_ids": [
+    "INV-00070"
+   ],
+   "payment_group": [
+    "pay_E0vuqI5udBz99o"
+   ]
+  },
+  "pay_EIuOFe5c4qkqNh": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00158"
+   ],
+   "payment_group": [
+    "pay_EIuOFe5c4qkqNh"
+   ]
+  },
+  "pay_EZxq1WDmxrG1Uz": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00020"
+   ],
+   "payment_group": [
+    "pay_EZxq1WDmxrG1Uz"
+   ]
+  },
+  "pay_Evgkj44JPbHUv8": {
+   "case_type": "many_to_one",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00155",
+    "INV-00156"
+   ],
+   "payment_group": [
+    "pay_Evgkj44JPbHUv8"
+   ]
+  },
+  "pay_FzcsTaxt6ks1yH": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00079"
+   ],
+   "payment_group": [
+    "pay_FzcsTaxt6ks1yH"
+   ]
+  },
+  "pay_GBVuAfhSRrhTdH": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00058"
+   ],
+   "payment_group": [
+    "pay_GBVuAfhSRrhTdH"
+   ]
+  },
+  "pay_GFSiJOuqcgTu5A": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00139"
+   ],
+   "payment_group": [
+    "pay_GFSiJOuqcgTu5A"
+   ]
+  },
+  "pay_GJUfib7BQreNEf": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00162"
+   ],
+   "payment_group": [
+    "pay_GJUfib7BQreNEf",
+    "pay_VVDT5I3ddBthDp"
+   ]
+  },
+  "pay_H2w6BVZXiWulIr": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00095"
+   ],
+   "payment_group": [
+    "pay_H2w6BVZXiWulIr"
+   ]
+  },
+  "pay_H7od7WkjzTvqNZ": {
+   "case_type": "name_only",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00108"
+   ],
+   "payment_group": [
+    "pay_H7od7WkjzTvqNZ"
+   ]
+  },
+  "pay_HfDo1ylfGq1g5X": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00183"
+   ],
+   "payment_group": [
+    "pay_HfDo1ylfGq1g5X"
+   ]
+  },
+  "pay_Hkt9740n1h9t1n": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00104"
+   ],
+   "payment_group": [
+    "pay_Hkt9740n1h9t1n",
+    "pay_SN9vZEs3W6seYY",
+    "pay_bZUTtOjzx4ef0R"
+   ]
+  },
+  "pay_HmiCf9E36ruXhU": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00102"
+   ],
+   "payment_group": [
+    "pay_HmiCf9E36ruXhU"
+   ]
+  },
+  "pay_HwZzI3WfOP4WYb": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00053"
+   ],
+   "payment_group": [
+    "pay_HwZzI3WfOP4WYb"
+   ]
+  },
+  "pay_IEAq9ui8OLf1lJ": {
+   "case_type": "name_only",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00007"
+   ],
+   "payment_group": [
+    "pay_IEAq9ui8OLf1lJ"
+   ]
+  },
+  "pay_IF9MOaeVhiugR1": {
+   "case_type": "many_to_one",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00166",
+    "INV-00167"
+   ],
+   "payment_group": [
+    "pay_IF9MOaeVhiugR1"
+   ]
+  },
+  "pay_It7RSzfKwFmZqH": {
+   "case_type": "lump_sum",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00169",
+    "INV-00170",
+    "INV-00171",
+    "INV-00172"
+   ],
+   "payment_group": [
+    "pay_It7RSzfKwFmZqH"
+   ]
+  },
+  "pay_IybrdTP80h08Zq": {
+   "case_type": "name_only",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00173"
+   ],
+   "payment_group": [
+    "pay_IybrdTP80h08Zq"
+   ]
+  },
+  "pay_IzDfpcaAyJfCRN": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00036"
+   ],
+   "payment_group": [
+    "pay_IzDfpcaAyJfCRN",
+    "pay_ernasNPcE7qe4S"
+   ]
+  },
+  "pay_JCathuhD6Id0go": {
+   "case_type": "many_to_one",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00073",
+    "INV-00074"
+   ],
+   "payment_group": [
+    "pay_JCathuhD6Id0go"
+   ]
+  },
+  "pay_JLyw3V33bgpnlF": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00042"
+   ],
+   "payment_group": [
+    "pay_00m3ZJ3FvMlhfw",
+    "pay_JLyw3V33bgpnlF",
+    "pay_zhDMwOH4OgAput"
+   ]
+  },
+  "pay_JWT5AJqfOB4H92": {
+   "case_type": "name_only",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00168"
+   ],
+   "payment_group": [
+    "pay_JWT5AJqfOB4H92"
+   ]
+  },
+  "pay_Jigbr8AclJUGo8": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00019"
+   ],
+   "payment_group": [
+    "pay_Jigbr8AclJUGo8"
+   ]
+  },
+  "pay_K2Vc2ONZ1k8P1e": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00093"
+   ],
+   "payment_group": [
+    "pay_K2Vc2ONZ1k8P1e"
+   ]
+  },
+  "pay_KaWIvuRrCLcXIt": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00187"
+   ],
+   "payment_group": [
+    "pay_8Bt5Z5teTn7laC",
+    "pay_KaWIvuRrCLcXIt"
+   ]
+  },
+  "pay_LGNm7Tli4yNWng": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00159"
+   ],
+   "payment_group": [
+    "pay_63jf6Akfr4qUAg",
+    "pay_LGNm7Tli4yNWng"
+   ]
+  },
+  "pay_LPic83s2bX8sUT": {
+   "case_type": "name_only",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00145"
+   ],
+   "payment_group": [
+    "pay_LPic83s2bX8sUT"
+   ]
+  },
+  "pay_MiNsZZIdJw27oU": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00050"
+   ],
+   "payment_group": [
+    "pay_DJwYY3ikjmJqRh",
+    "pay_MiNsZZIdJw27oU"
+   ]
+  },
+  "pay_MuFuQvxleJ3ZlW": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00021"
+   ],
+   "payment_group": [
+    "pay_MuFuQvxleJ3ZlW"
+   ]
+  },
+  "pay_MzTdeD9KA0ECOO": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00048"
+   ],
+   "payment_group": [
+    "pay_DgRNIHONdsig3A",
+    "pay_MzTdeD9KA0ECOO",
+    "pay_iC1JVbWX3sA7xJ"
+   ]
+  },
+  "pay_N61nqRl4nbsb4u": {
+   "case_type": "many_to_one",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00179",
+    "INV-00180",
+    "INV-00181"
+   ],
+   "payment_group": [
+    "pay_N61nqRl4nbsb4u"
+   ]
+  },
+  "pay_NJbnnSsTWzo3SQ": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00039"
+   ],
+   "payment_group": [
+    "pay_NJbnnSsTWzo3SQ"
+   ]
+  },
+  "pay_OOaCLhgo1uCZe2": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00038"
+   ],
+   "payment_group": [
+    "pay_OOaCLhgo1uCZe2",
+    "pay_Pqphy4p8tMRKRK",
+    "pay_QEW8kM9G7QEhei"
+   ]
+  },
+  "pay_PPtbBLiwAyypXA": {
+   "case_type": "prompt_injection",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00005"
+   ],
+   "payment_group": [
+    "pay_PPtbBLiwAyypXA"
+   ]
+  },
+  "pay_Pqphy4p8tMRKRK": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00038"
+   ],
+   "payment_group": [
+    "pay_OOaCLhgo1uCZe2",
+    "pay_Pqphy4p8tMRKRK",
+    "pay_QEW8kM9G7QEhei"
+   ]
+  },
+  "pay_Pvd7zUlarJSqiv": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00017"
+   ],
+   "payment_group": [
+    "pay_Pvd7zUlarJSqiv"
+   ]
+  },
+  "pay_Q84pKBkZlcLOI4": {
+   "case_type": "erp_typo",
+   "expect": "escalate",
+   "invoice_ids": [
+    "INV-00083"
+   ],
+   "payment_group": [
+    "pay_Q84pKBkZlcLOI4"
+   ]
+  },
+  "pay_QEW8kM9G7QEhei": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00038"
+   ],
+   "payment_group": [
+    "pay_OOaCLhgo1uCZe2",
+    "pay_Pqphy4p8tMRKRK",
+    "pay_QEW8kM9G7QEhei"
+   ]
+  },
+  "pay_QV5OtKhxnlgAQG": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00120"
+   ],
+   "payment_group": [
+    "pay_QV5OtKhxnlgAQG"
+   ]
+  },
+  "pay_Qk7N0HSNz0OOHA": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00175"
+   ],
+   "payment_group": [
+    "pay_Qk7N0HSNz0OOHA"
+   ]
+  },
+  "pay_RAe9HDjwiqbATI": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00208"
+   ],
+   "payment_group": [
+    "pay_RAe9HDjwiqbATI"
+   ]
+  },
+  "pay_RLcnl14FdANGor": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00174"
+   ],
+   "payment_group": [
+    "pay_RLcnl14FdANGor"
+   ]
+  },
+  "pay_RVtzYjj8hck5iX": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00199"
+   ],
+   "payment_group": [
+    "pay_RVtzYjj8hck5iX"
+   ]
+  },
+  "pay_SN9vZEs3W6seYY": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00104"
+   ],
+   "payment_group": [
+    "pay_Hkt9740n1h9t1n",
+    "pay_SN9vZEs3W6seYY",
+    "pay_bZUTtOjzx4ef0R"
+   ]
+  },
+  "pay_ScPGigS2LzOglg": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00075"
+   ],
+   "payment_group": [
+    "pay_ScPGigS2LzOglg"
+   ]
+  },
+  "pay_SjV3De9bY73cQh": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00207"
+   ],
+   "payment_group": [
+    "pay_SjV3De9bY73cQh"
+   ]
+  },
+  "pay_SyUZjr2rne2DXC": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00084"
+   ],
+   "payment_group": [
+    "pay_SyUZjr2rne2DXC",
+    "pay_lWGZik2a2Fb8fO"
+   ]
+  },
+  "pay_Syzsek3j57alG1": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00099"
+   ],
+   "payment_group": [
+    "pay_Syzsek3j57alG1"
+   ]
+  },
+  "pay_TddhgbJ2Cu9ocF": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00147"
+   ],
+   "payment_group": [
+    "pay_TddhgbJ2Cu9ocF"
+   ]
+  },
+  "pay_U5T7iTUtjOjbVs": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00072"
+   ],
+   "payment_group": [
+    "pay_U5T7iTUtjOjbVs",
+    "pay_hD55RRTkyqo0VA"
+   ]
+  },
+  "pay_UD67xCtGIEIfcS": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00132"
+   ],
+   "payment_group": [
+    "pay_UD67xCtGIEIfcS"
+   ]
+  },
+  "pay_UOCzzcr16VDfoN": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00080"
+   ],
+   "payment_group": [
+    "pay_UOCzzcr16VDfoN"
+   ]
+  },
+  "pay_UjBrUrcOJhHBMv": {
+   "case_type": "name_only",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00149"
+   ],
+   "payment_group": [
+    "pay_UjBrUrcOJhHBMv"
+   ]
+  },
+  "pay_V75EHpPj68yPUp": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00193"
+   ],
+   "payment_group": [
+    "pay_V75EHpPj68yPUp"
+   ]
+  },
+  "pay_VLtBbuwf0OGodb": {
+   "case_type": "lump_sum",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00105",
+    "INV-00106",
+    "INV-00107"
+   ],
+   "payment_group": [
+    "pay_VLtBbuwf0OGodb"
+   ]
+  },
+  "pay_VSUSgruo7ajvtt": {
+   "case_type": "many_to_one",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00164",
+    "INV-00165"
+   ],
+   "payment_group": [
+    "pay_VSUSgruo7ajvtt"
+   ]
+  },
+  "pay_VVDT5I3ddBthDp": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00162"
+   ],
+   "payment_group": [
+    "pay_GJUfib7BQreNEf",
+    "pay_VVDT5I3ddBthDp"
+   ]
+  },
+  "pay_WAY40VmvtLlBtc": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00198"
+   ],
+   "payment_group": [
+    "pay_WAY40VmvtLlBtc"
+   ]
+  },
+  "pay_WAduUWhRZPJnXV": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00111"
+   ],
+   "payment_group": [
+    "pay_WAduUWhRZPJnXV"
+   ]
+  },
+  "pay_WW8D7n2mCqu0Ni": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00203"
+   ],
+   "payment_group": [
+    "pay_WW8D7n2mCqu0Ni"
+   ]
+  },
+  "pay_Wi8K3HXp00E3Sj": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00037"
+   ],
+   "payment_group": [
+    "pay_Wi8K3HXp00E3Sj"
+   ]
+  },
+  "pay_XnYDGrNOxfJSmI": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00018"
+   ],
+   "payment_group": [
+    "pay_XnYDGrNOxfJSmI"
+   ]
+  },
+  "pay_XuDvcuHcE0FDGZ": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00101"
+   ],
+   "payment_group": [
+    "pay_4HDeFCqH57mAOr",
+    "pay_62U4QSR6TVSOAF",
+    "pay_XuDvcuHcE0FDGZ"
+   ]
+  },
+  "pay_Y9UPkml7Sru4Au": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00184"
+   ],
+   "payment_group": [
+    "pay_Y9UPkml7Sru4Au"
+   ]
+  },
+  "pay_Yr5fNsyd7AxriA": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00188"
+   ],
+   "payment_group": [
+    "pay_Yr5fNsyd7AxriA"
+   ]
+  },
+  "pay_aSzoRF9QFhfDiN": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00202"
+   ],
+   "payment_group": [
+    "pay_aSzoRF9QFhfDiN"
+   ]
+  },
+  "pay_bPKl5sfaJatduF": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00163"
+   ],
+   "payment_group": [
+    "pay_bPKl5sfaJatduF"
+   ]
+  },
+  "pay_bZUTtOjzx4ef0R": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00104"
+   ],
+   "payment_group": [
+    "pay_Hkt9740n1h9t1n",
+    "pay_SN9vZEs3W6seYY",
+    "pay_bZUTtOjzx4ef0R"
+   ]
+  },
+  "pay_bcVeWMHhU925vT": {
+   "case_type": "lump_sum",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00028",
+    "INV-00029",
+    "INV-00030",
+    "INV-00031"
+   ],
+   "payment_group": [
+    "pay_bcVeWMHhU925vT"
+   ]
+  },
+  "pay_d4bTcOuOibbFdX": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00060"
+   ],
+   "payment_group": [
+    "pay_d4bTcOuOibbFdX"
+   ]
+  },
+  "pay_dHY5CA0fUpEvcq": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00128"
+   ],
+   "payment_group": [
+    "pay_dHY5CA0fUpEvcq"
+   ]
+  },
+  "pay_dhzMy4Eyt5r7CM": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00116"
+   ],
+   "payment_group": [
+    "pay_dhzMy4Eyt5r7CM"
+   ]
+  },
+  "pay_ePny6kFa3mXcS6": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00197"
+   ],
+   "payment_group": [
+    "pay_ePny6kFa3mXcS6"
+   ]
+  },
+  "pay_eg9qwqN1tWuUKW": {
+   "case_type": "lump_sum",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00189",
+    "INV-00190",
+    "INV-00191"
+   ],
+   "payment_group": [
+    "pay_eg9qwqN1tWuUKW"
+   ]
+  },
+  "pay_ernasNPcE7qe4S": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00036"
+   ],
+   "payment_group": [
+    "pay_IzDfpcaAyJfCRN",
+    "pay_ernasNPcE7qe4S"
+   ]
+  },
+  "pay_hD55RRTkyqo0VA": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00072"
+   ],
+   "payment_group": [
+    "pay_U5T7iTUtjOjbVs",
+    "pay_hD55RRTkyqo0VA"
+   ]
+  },
+  "pay_hHJgqXWt3mmCzZ": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00133"
+   ],
+   "payment_group": [
+    "pay_5pFXBk418ITF1P",
+    "pay_hHJgqXWt3mmCzZ",
+    "pay_hj1aPuv6KOX1oT"
+   ]
+  },
+  "pay_hKT961vT58s8qt": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00092"
+   ],
+   "payment_group": [
+    "pay_hKT961vT58s8qt"
+   ]
+  },
+  "pay_hQvzPBNDMyRgx3": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00046"
+   ],
+   "payment_group": [
+    "pay_hQvzPBNDMyRgx3"
+   ]
+  },
+  "pay_hWDkitVu1LZKsK": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00148"
+   ],
+   "payment_group": [
+    "pay_hWDkitVu1LZKsK"
+   ]
+  },
+  "pay_hcsSSgFkzfrRRi": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00113"
+   ],
+   "payment_group": [
+    "pay_hcsSSgFkzfrRRi"
+   ]
+  },
+  "pay_hj1aPuv6KOX1oT": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00133"
+   ],
+   "payment_group": [
+    "pay_5pFXBk418ITF1P",
+    "pay_hHJgqXWt3mmCzZ",
+    "pay_hj1aPuv6KOX1oT"
+   ]
+  },
+  "pay_hkW63ropOxeAvJ": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00077"
+   ],
+   "payment_group": [
+    "pay_hkW63ropOxeAvJ"
+   ]
+  },
+  "pay_hnZpeZYxBcqWRb": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00091"
+   ],
+   "payment_group": [
+    "pay_hnZpeZYxBcqWRb"
+   ]
+  },
+  "pay_iC1JVbWX3sA7xJ": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00048"
+   ],
+   "payment_group": [
+    "pay_DgRNIHONdsig3A",
+    "pay_MzTdeD9KA0ECOO",
+    "pay_iC1JVbWX3sA7xJ"
+   ]
+  },
+  "pay_iEgyYV0mn2LiIv": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00135"
+   ],
+   "payment_group": [
+    "pay_iEgyYV0mn2LiIv"
+   ]
+  },
+  "pay_ijZCxuo3vtJ1pY": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00109"
+   ],
+   "payment_group": [
+    "pay_ijZCxuo3vtJ1pY"
+   ]
+  },
+  "pay_jCRXELlBlEdffF": {
+   "case_type": "name_only",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00182"
+   ],
+   "payment_group": [
+    "pay_jCRXELlBlEdffF"
+   ]
+  },
+  "pay_jF5a8w091HSAYc": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00009"
+   ],
+   "payment_group": [
+    "pay_jF5a8w091HSAYc"
+   ]
+  },
+  "pay_jLrnkSfXsruYzv": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00185"
+   ],
+   "payment_group": [
+    "pay_jLrnkSfXsruYzv"
+   ]
+  },
+  "pay_jP56OYrsVxzaEH": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00026"
+   ],
+   "payment_group": [
+    "pay_jP56OYrsVxzaEH"
+   ]
+  },
+  "pay_kUccRjMNEJ7fut": {
+   "case_type": "erp_typo",
+   "expect": "escalate",
+   "invoice_ids": [
+    "INV-00206"
+   ],
+   "payment_group": [
+    "pay_kUccRjMNEJ7fut"
+   ]
+  },
+  "pay_kWZSsb4gmDyexz": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00049"
+   ],
+   "payment_group": [
+    "pay_kWZSsb4gmDyexz"
+   ]
+  },
+  "pay_lCmXhLELyEHbF8": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00032"
+   ],
+   "payment_group": [
+    "pay_lCmXhLELyEHbF8"
+   ]
+  },
+  "pay_lWGZik2a2Fb8fO": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00084"
+   ],
+   "payment_group": [
+    "pay_SyUZjr2rne2DXC",
+    "pay_lWGZik2a2Fb8fO"
+   ]
+  },
+  "pay_lbuAIp026i0AyR": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00082"
+   ],
+   "payment_group": [
+    "pay_lbuAIp026i0AyR"
+   ]
+  },
+  "pay_lfDloUXo7tNAD1": {
+   "case_type": "name_only",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00057"
+   ],
+   "payment_group": [
+    "pay_lfDloUXo7tNAD1"
+   ]
+  },
+  "pay_lhQCYPbCJ4GUFt": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00129"
+   ],
+   "payment_group": [
+    "pay_lhQCYPbCJ4GUFt"
+   ]
+  },
+  "pay_lvHKyUy6tULTuX": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00161"
+   ],
+   "payment_group": [
+    "pay_lvHKyUy6tULTuX"
+   ]
+  },
+  "pay_lwakgw1kaxThfr": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00078"
+   ],
+   "payment_group": [
+    "pay_3HiZnGzVOe0oxZ",
+    "pay_lwakgw1kaxThfr"
+   ]
+  },
+  "pay_mfzy2x3nMIVMKX": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00056"
+   ],
+   "payment_group": [
+    "pay_mfzy2x3nMIVMKX"
+   ]
+  },
+  "pay_nPyPKWCKu2gAHu": {
+   "case_type": "erp_typo",
+   "expect": "escalate",
+   "invoice_ids": [
+    "INV-00094"
+   ],
+   "payment_group": [
+    "pay_nPyPKWCKu2gAHu"
+   ]
+  },
+  "pay_oB9QyR0ma90Ytq": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00119"
+   ],
+   "payment_group": [
+    "pay_oB9QyR0ma90Ytq"
+   ]
+  },
+  "pay_oGx4IfDRVAj5uj": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00024"
+   ],
+   "payment_group": [
+    "pay_oGx4IfDRVAj5uj",
+    "pay_vWbkGm30fBQBm1"
+   ]
+  },
+  "pay_oRG3j7V53zTx8Y": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00008"
+   ],
+   "payment_group": [
+    "pay_oRG3j7V53zTx8Y"
+   ]
+  },
+  "pay_oiFsXz3u3ucem3": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00076"
+   ],
+   "payment_group": [
+    "pay_oiFsXz3u3ucem3"
+   ]
+  },
+  "pay_opPOBKQMPzwmHz": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00157"
+   ],
+   "payment_group": [
+    "pay_2i0FvY1xzcXRnX",
+    "pay_DihndxgBY6PWhA",
+    "pay_opPOBKQMPzwmHz"
+   ]
+  },
+  "pay_ovjJXhrsKDOzzb": {
+   "case_type": "ambiguous_twin",
+   "expect": "escalate",
+   "invoice_ids": [
+    "INV-00015"
+   ],
+   "payment_group": [
+    "pay_ovjJXhrsKDOzzb"
+   ]
+  },
+  "pay_ovjN59CvcFDCm8": {
+   "case_type": "lump_sum",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00151",
+    "INV-00152",
+    "INV-00153",
+    "INV-00154"
+   ],
+   "payment_group": [
+    "pay_ovjN59CvcFDCm8"
+   ]
+  },
+  "pay_ox7WeA4OfKXNqu": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00044"
+   ],
+   "payment_group": [
+    "pay_ox7WeA4OfKXNqu"
+   ]
+  },
+  "pay_p0BoeJSYtWSEYy": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00201"
+   ],
+   "payment_group": [
+    "pay_p0BoeJSYtWSEYy"
+   ]
+  },
+  "pay_pPszHrja6mtcWD": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00146"
+   ],
+   "payment_group": [
+    "pay_pPszHrja6mtcWD"
+   ]
+  },
+  "pay_pj7uYK9q34RINp": {
+   "case_type": "name_only",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00200"
+   ],
+   "payment_group": [
+    "pay_pj7uYK9q34RINp"
+   ]
+  },
+  "pay_q9RfDDwI0YH0H8": {
+   "case_type": "name_only",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00027"
+   ],
+   "payment_group": [
+    "pay_q9RfDDwI0YH0H8"
+   ]
+  },
+  "pay_qFH1ARvIVNocw1": {
+   "case_type": "erp_typo",
+   "expect": "escalate",
+   "invoice_ids": [
+    "INV-00052"
+   ],
+   "payment_group": [
+    "pay_qFH1ARvIVNocw1"
+   ]
+  },
+  "pay_qSoonGD7Y2RMky": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00081"
+   ],
+   "payment_group": [
+    "pay_qSoonGD7Y2RMky"
+   ]
+  },
+  "pay_qw37CplGtcVN0m": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00040"
+   ],
+   "payment_group": [
+    "pay_qw37CplGtcVN0m"
+   ]
+  },
+  "pay_r2mmlLsUoUbpdq": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00196"
+   ],
+   "payment_group": [
+    "pay_r2mmlLsUoUbpdq"
+   ]
+  },
+  "pay_rRytY7k6UJK7tl": {
+   "case_type": "many_to_one",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00204",
+    "INV-00205"
+   ],
+   "payment_group": [
+    "pay_rRytY7k6UJK7tl"
+   ]
+  },
+  "pay_rnD9RahcVHEwlz": {
+   "case_type": "many_to_one",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00054",
+    "INV-00055"
+   ],
+   "payment_group": [
+    "pay_rnD9RahcVHEwlz"
+   ]
+  },
+  "pay_sAV23qnT7XULCk": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00045"
+   ],
+   "payment_group": [
+    "pay_sAV23qnT7XULCk"
+   ]
+  },
+  "pay_sNy4kitwVPNacq": {
+   "case_type": "prompt_injection",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00125"
+   ],
+   "payment_group": [
+    "pay_sNy4kitwVPNacq"
+   ]
+  },
+  "pay_skvy9uFKGmEgFS": {
+   "case_type": "name_only",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00089"
+   ],
+   "payment_group": [
+    "pay_skvy9uFKGmEgFS"
+   ]
+  },
+  "pay_sqqyvOpFavaa03": {
+   "case_type": "erp_typo",
+   "expect": "escalate",
+   "invoice_ids": [
+    "INV-00192"
+   ],
+   "payment_group": [
+    "pay_sqqyvOpFavaa03"
+   ]
+  },
+  "pay_t1AoSO4I4188Gs": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00041"
+   ],
+   "payment_group": [
+    "pay_t1AoSO4I4188Gs"
+   ]
+  },
+  "pay_tCPYMQzCiPw3le": {
+   "case_type": "many_to_one",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00085",
+    "INV-00086"
+   ],
+   "payment_group": [
+    "pay_tCPYMQzCiPw3le"
+   ]
+  },
+  "pay_tDmiofkWrxi8X5": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00103"
+   ],
+   "payment_group": [
+    "pay_tDmiofkWrxi8X5"
+   ]
+  },
+  "pay_tnMX4F43qta9jw": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00127"
+   ],
+   "payment_group": [
+    "pay_tnMX4F43qta9jw"
+   ]
+  },
+  "pay_uB8ogrm0LR20x8": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00098"
+   ],
+   "payment_group": [
+    "pay_uB8ogrm0LR20x8"
+   ]
+  },
+  "pay_uXDMOPTNc7zuMn": {
+   "case_type": "many_to_one",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00001",
+    "INV-00002"
+   ],
+   "payment_group": [
+    "pay_uXDMOPTNc7zuMn"
+   ]
+  },
+  "pay_v7bOqoWuf64KCB": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00130"
+   ],
+   "payment_group": [
+    "pay_v7bOqoWuf64KCB"
+   ]
+  },
+  "pay_vWbkGm30fBQBm1": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00024"
+   ],
+   "payment_group": [
+    "pay_oGx4IfDRVAj5uj",
+    "pay_vWbkGm30fBQBm1"
+   ]
+  },
+  "pay_wOuURBuhCtWFiU": {
+   "case_type": "lump_sum",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00121",
+    "INV-00122",
+    "INV-00123"
+   ],
+   "payment_group": [
+    "pay_wOuURBuhCtWFiU"
+   ]
+  },
+  "pay_wSiqKfmQPJghrT": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00134"
+   ],
+   "payment_group": [
+    "pay_wSiqKfmQPJghrT"
+   ]
+  },
+  "pay_xADcMb3TsIIYdh": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00047"
+   ],
+   "payment_group": [
+    "pay_xADcMb3TsIIYdh"
+   ]
+  },
+  "pay_xN8WsAc05KB9x1": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00090"
+   ],
+   "payment_group": [
+    "pay_xN8WsAc05KB9x1"
+   ]
+  },
+  "pay_xtnIjMNpiguFg3": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00012"
+   ],
+   "payment_group": [
+    "pay_xtnIjMNpiguFg3"
+   ]
+  },
+  "pay_ymR4YJHPzPKeIa": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00097"
+   ],
+   "payment_group": [
+    "pay_ymR4YJHPzPKeIa"
+   ]
+  },
+  "pay_ymVOa2MPE8BwZX": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00011"
+   ],
+   "payment_group": [
+    "pay_ymVOa2MPE8BwZX"
+   ]
+  },
+  "pay_yuTKA9SyclBRJp": {
+   "case_type": "prompt_injection",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00117"
+   ],
+   "payment_group": [
+    "pay_yuTKA9SyclBRJp"
+   ]
+  },
+  "pay_yvqXPAj79cxu5r": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00160"
+   ],
+   "payment_group": [
+    "pay_yvqXPAj79cxu5r"
+   ]
+  },
+  "pay_zU5Uep4tkbF2C7": {
+   "case_type": "clean",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00194"
+   ],
+   "payment_group": [
+    "pay_zU5Uep4tkbF2C7"
+   ]
+  },
+  "pay_zhDMwOH4OgAput": {
+   "case_type": "partial_payment",
+   "expect": "match",
+   "invoice_ids": [
+    "INV-00042"
+   ],
+   "payment_group": [
+    "pay_00m3ZJ3FvMlhfw",
+    "pay_JLyw3V33bgpnlF",
+    "pay_zhDMwOH4OgAput"
+   ]
+  }
+ },
+ "seed": 2026,
+ "settlements": {
+  "setl_0sbEqbCJT9ElGi": 21920180,
+  "setl_15ZFRdXk8YBvtp": 3124480,
+  "setl_2CjnLFnpfjeMz7": 62053080,
+  "setl_36lWR7FC37Twhw": 42619860,
+  "setl_3be6i1xYd8j2LL": 93099740,
+  "setl_4otnhiTZwvR2N6": 50772800,
+  "setl_APM8h6wgE7ubTD": 10506020,
+  "setl_AvTQKYUc0fqqKt": 14206620,
+  "setl_ClhyZj5smVA7Uz": 6834800,
+  "setl_DSkkRXwBTDifHC": 42326940,
+  "setl_HtEYZk6oGDpQT0": 52768520,
+  "setl_IcdmtM0KD6BWRi": 14206620,
+  "setl_KfOeSlDMLnfOvp": 13034940,
+  "setl_ORESrElEDHwRZ0": 25435220,
+  "setl_VFdOyECGbwDzUZ": 13669600,
+  "setl_WiiKFFQ5CLCyvz": 58193440,
+  "setl_Xkcmb4ipivXEdH": 21041420,
+  "setl_cx1DgEIAxPUTzh": 88705940,
+  "setl_dXVIpLW9BtJO1V": 5907220,
+  "setl_dfHwmLEyMVMJfU": 91928060,
+  "setl_gCEyICsxS1yv0O": 35003940,
+  "setl_jj1VAM4whQSIXo": 45500240,
+  "setl_mras59wFzxBHG5": 33109680,
+  "setl_qvPgxxF8ydr6UM": 36126800,
+  "setl_vnEcQJBElJictF": 3661500,
+  "setl_wjQ5QXANYqhAIn": 8689960,
+  "setl_yBl6Ump1suvf0l": 62147860
+ }
+}
