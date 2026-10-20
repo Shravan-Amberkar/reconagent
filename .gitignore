@@ -1,0 +1,12 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+data/runs/
+data/schema_cache.json
+results/*
+!results/.gitkeep
+!results/latest.json
+!results/ablations.json
+!results/ablations.md
