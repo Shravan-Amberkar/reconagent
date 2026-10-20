@@ -1,0 +1,405 @@
+{
+ "config": {
+  "bank_format": "A",
+  "model": "claude-sonnet-5-5",
+  "name": "full",
+  "payments": 250,
+  "seeds": "1"
+ },
+ "cost": {
+  "cache_hits": 130,
+  "cache_misses": 9,
+  "exceptions": 41,
+  "input_tokens": 747883,
+  "inr_per_1000_items": 984.17,
+  "latency_p50_s": 0.007,
+  "latency_p95_s": 7.313,
+  "llm_calls": 139,
+  "llm_calls_per_exception": 3.39,
+  "output_tokens": 50382,
+  "usd": 2.9994
+ },
+ "escalation_precision": 1.0,
+ "escalations": 16,
+ "levels": {
+  "A": {
+   "auto_match_rate": 1.0,
+   "correct": 24,
+   "escalated": 3,
+   "false": 0,
+   "false_match_rate": 0.0,
+   "items": 29,
+   "matchable": 24,
+   "unmatched": 2
+  },
+  "B": {
+   "auto_match_rate": 1.0,
+   "correct": 214,
+   "escalated": 13,
+   "false": 0,
+   "false_match_rate": 0.0,
+   "items": 227,
+   "matchable": 214,
+   "unmatched": 0
+  }
+ },
+ "negative_control_leakage": 0,
+ "per_case": {
+  "A:chargeback": {
+   "auto_match_rate": 1.0,
+   "correct": 2,
+   "escalated": 0,
+   "false": 0,
+   "false_match_rate": 0.0,
+   "items": 2,
+   "matchable": 2,
+   "unmatched": 0
+  },
+  "A:clean": {
+   "auto_match_rate": 1.0,
+   "correct": 12,
+   "escalated": 0,
+   "false": 0,
+   "false_match_rate": 0.0,
+   "items": 12,
+   "matchable": 12,
+   "unmatched": 0
+  },
+  "A:duplicate_entry": {
+   "auto_match_rate": 0.0,
+   "correct": 0,
+   "escalated": 0,
+   "false": 0,
+   "false_match_rate": 0.0,
+   "items": 2,
+   "matchable": 0,
+   "unmatched": 2
+  },
+  "A:holiday_shift": {
+   "auto_match_rate": 1.0,
+   "correct": 2,
+   "escalated": 0,
+   "false": 0,
+   "false_match_rate": 0.0,
+   "items": 2,
+   "matchable": 2,
+   "unmatched": 0
+  },
+  "A:negative_control": {
+   "auto_match_rate": 0.0,
+   "correct": 0,
+   "escalated": 3,
+   "false": 0,
+   "false_match_rate": 0.0,
+   "items": 3,
+   "matchable": 0,
+   "unmatched": 0
+  },
+  "A:netted_refund": {
+   "auto_match_rate": 1.0,
+   "correct": 2,
+   "escalated": 0,
+   "false": 0,
+   "false_match_rate": 0.0,
+   "items": 2,
+   "matchable": 2,
+   "unmatched": 0
+  },
+  "A:split_settlement": {
+   "auto_match_rate": 1.0,
+   "correct": 3,
+   "escalated": 0,
+   "false": 0,
+   "false_match_rate": 0.0,
+   "items": 3,
+   "matchable": 3,
+   "unmatched": 0
+  },
+  "A:utr_truncated": {
+   "auto_match_rate": 1.0,
+   "correct": 3,
+   "escalated": 0,
+   "false": 0,
+   "false_match_rate": 0.0,
+   "items": 3,
+   "matchable": 3,
+   "unmatched": 0
+  },
+  "B:ambiguous_twin": {
+   "auto_match_rate": 0.0,
+   "correct": 0,
+   "escalated": 6,
+   "false": 0,
+   "false_match_rate": 0.0,
+   "items": 6,
+   "matchable": 0,
+   "unmatched": 0
+  },
+  "B:clean": {
+   "auto_match_rate": 1.0,
+   "correct": 129,
+   "escalated": 0,
+   "false": 0,
+   "false_match_rate": 0.0,
+   "items": 129,
+   "matchable": 129,
+   "unmatched": 0
+  },
+  "B:erp_typo": {
+   "auto_match_rate": 0.0,
+   "correct": 0,
+   "escalated": 7,
+   "false": 0,
+   "false_match_rate": 0.0,
+   "items": 7,
+   "matchable": 0,
+   "unmatched": 0
+  },
+  "B:lump_sum": {
+   "auto_match_rate": 1.0,
+   "correct": 5,
+   "escalated": 0,
+   "false": 0,
+   "false_match_rate": 0.0,
+   "items": 5,
+   "matchable": 5,
+   "unmatched": 0
+  },
+  "B:many_to_one": {
+   "auto_match_rate": 1.0,
+   "correct": 17,
+   "escalated": 0,
+   "false": 0,
+   "false_match_rate": 0.0,
+   "items": 17,
+   "matchable": 17,
+   "unmatched": 0
+  },
+  "B:name_only": {
+   "auto_match_rate": 1.0,
+   "correct": 14,
+   "escalated": 0,
+   "false": 0,
+   "false_match_rate": 0.0,
+   "items": 14,
+   "matchable": 14,
+   "unmatched": 0
+  },
+  "B:partial_payment": {
+   "auto_match_rate": 1.0,
+   "correct": 46,
+   "escalated": 0,
+   "false": 0,
+   "false_match_rate": 0.0,
+   "items": 46,
+   "matchable": 46,
+   "unmatched": 0
+  },
+  "B:prompt_injection": {
+   "auto_match_rate": 1.0,
+   "correct": 3,
+   "escalated": 0,
+   "false": 0,
+   "false_match_rate": 0.0,
+   "items": 3,
+   "matchable": 3,
+   "unmatched": 0
+  }
+ },
+ "per_seed": {
+  "1": {
+   "by_source": {
+    "agent": 25,
+    "deterministic": 186,
+    "human": 0
+   },
+   "escalation_precision": 1.0,
+   "escalations": 16,
+   "levels": {
+    "A": {
+     "auto_match_rate": 1.0,
+     "correct": 24,
+     "escalated": 3,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 29,
+     "matchable": 24,
+     "unmatched": 2
+    },
+    "B": {
+     "auto_match_rate": 1.0,
+     "correct": 214,
+     "escalated": 13,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 227,
+     "matchable": 214,
+     "unmatched": 0
+    }
+   },
+   "negative_control_leakage": 0,
+   "per_case": {
+    "A:chargeback": {
+     "auto_match_rate": 1.0,
+     "correct": 2,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 2,
+     "matchable": 2,
+     "unmatched": 0
+    },
+    "A:clean": {
+     "auto_match_rate": 1.0,
+     "correct": 12,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 12,
+     "matchable": 12,
+     "unmatched": 0
+    },
+    "A:duplicate_entry": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 2,
+     "matchable": 0,
+     "unmatched": 2
+    },
+    "A:holiday_shift": {
+     "auto_match_rate": 1.0,
+     "correct": 2,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 2,
+     "matchable": 2,
+     "unmatched": 0
+    },
+    "A:negative_control": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 3,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 3,
+     "matchable": 0,
+     "unmatched": 0
+    },
+    "A:netted_refund": {
+     "auto_match_rate": 1.0,
+     "correct": 2,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 2,
+     "matchable": 2,
+     "unmatched": 0
+    },
+    "A:split_settlement": {
+     "auto_match_rate": 1.0,
+     "correct": 3,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 3,
+     "matchable": 3,
+     "unmatched": 0
+    },
+    "A:utr_truncated": {
+     "auto_match_rate": 1.0,
+     "correct": 3,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 3,
+     "matchable": 3,
+     "unmatched": 0
+    },
+    "B:ambiguous_twin": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 6,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 6,
+     "matchable": 0,
+     "unmatched": 0
+    },
+    "B:clean": {
+     "auto_match_rate": 1.0,
+     "correct": 129,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 129,
+     "matchable": 129,
+     "unmatched": 0
+    },
+    "B:erp_typo": {
+     "auto_match_rate": 0.0,
+     "correct": 0,
+     "escalated": 7,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 7,
+     "matchable": 0,
+     "unmatched": 0
+    },
+    "B:lump_sum": {
+     "auto_match_rate": 1.0,
+     "correct": 5,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 5,
+     "matchable": 5,
+     "unmatched": 0
+    },
+    "B:many_to_one": {
+     "auto_match_rate": 1.0,
+     "correct": 17,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 17,
+     "matchable": 17,
+     "unmatched": 0
+    },
+    "B:name_only": {
+     "auto_match_rate": 1.0,
+     "correct": 14,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 14,
+     "matchable": 14,
+     "unmatched": 0
+    },
+    "B:partial_payment": {
+     "auto_match_rate": 1.0,
+     "correct": 46,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 46,
+     "matchable": 46,
+     "unmatched": 0
+    },
+    "B:prompt_injection": {
+     "auto_match_rate": 1.0,
+     "correct": 3,
+     "escalated": 0,
+     "false": 0,
+     "false_match_rate": 0.0,
+     "items": 3,
+     "matchable": 3,
+     "unmatched": 0
+    }
+   }
+  }
+ }
+}

@@ -14,9 +14,9 @@ from pathlib import Path
 from typing import Any, Protocol
 
 # Model ids live here and only here. Override with env vars without touching code.
-HYPOTHESIS_MODEL = os.environ.get("RECON_HYPOTHESIS_MODEL", "claude-sonnet-5")
-CHALLENGER_MODEL = os.environ.get("RECON_CHALLENGER_MODEL", "claude-sonnet-5")
-SCHEMA_MODEL = os.environ.get("RECON_SCHEMA_MODEL", "claude-haiku-4-5")
+HYPOTHESIS_MODEL = os.environ.get("RECON_HYPOTHESIS_MODEL", "claude-sonnet-5-5")
+CHALLENGER_MODEL = os.environ.get("RECON_CHALLENGER_MODEL", "claude-sonnet-5-5")
+SCHEMA_MODEL = os.environ.get("RECON_SCHEMA_MODEL", "claude-haiku-5-5")
 
 CACHE_DIR = Path(os.environ.get("RECON_LLM_CACHE", "data/llm_cache"))
 

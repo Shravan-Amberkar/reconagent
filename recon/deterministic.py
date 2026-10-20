@@ -188,6 +188,10 @@ def run_deterministic(book: Book) -> list[Match]:
 
 def residue(book: Book) -> tuple[list[str], list[str]]:
     """Unmatched exceptions left for the agent: bank credits (A) and payments (B)."""
-    a = [t.txn_id for t in book.credits() if book.free(t.txn_id)]
+    # Most-constrained first: the credit with the most specific UTR evidence resolves first, so
+    # a weaker credit sees only the settlements that are genuinely still available to it.
+    open_a = [t for t in book.credits() if book.free(t.txn_id)]
+    open_a.sort(key=lambda t: (-(len(t.utr) if t.utr else 0), t.date, t.txn_id))
+    a = [t.txn_id for t in open_a]
     b = [p for p in book.payments if book.free(p)]
     return a, b

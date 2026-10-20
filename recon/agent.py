@@ -386,7 +386,10 @@ class Agent:
                     a = h.model_copy(update={"settlement_ids": sol, "adjustments": []})
                     if not verify(a, "A", b, h.bank_txn_ids[0]):
                         return a
-            if len(h.bank_txn_ids) == 1:
+            # A rival credit claiming the same settlements is only real ambiguity if THIS credit
+            # could then be explained some other way (a genuine swap). Otherwise the exception
+            # has the stronger claim and the rival is simply wrong.
+            if len(h.bank_txn_ids) == 1 and self._has_other_explanation(h, "A", candidates):
                 setl_sum = sum(b.settlements[x].amount for x in h.settlement_ids)
                 for t in b.credits():
                     if t.txn_id in h.bank_txn_ids or not b.free(t.txn_id) or t.credit_paise != setl_sum:
@@ -402,7 +405,7 @@ class Agent:
                 a = h.model_copy(update={"invoice_ids": sol, "adjustments": []})
                 if not verify(a, "B", b, h.recon_entity_ids[0]):
                     return a
-        if len(h.recon_entity_ids) == 1:
+        if len(h.recon_entity_ids) == 1 and self._has_other_explanation(h, "B", candidates):
             inv_sum = sum(b.invoices[i].amount_paise for i in h.invoice_ids)
             for q in b.payments.values():
                 if q.entity_id in h.recon_entity_ids or not b.free(q.entity_id) or q.amount != inv_sum:
@@ -411,6 +414,25 @@ class Agent:
                 if not verify(a, "B", b, q.entity_id):
                     return a
         return None
+
+    def _has_other_explanation(self, h: Hypothesis, level: str, candidates: list[dict]) -> bool:
+        """Could the exception verify against counterparts disjoint from h's?"""
+        b = self.book
+        if level == "A":
+            used = set(h.settlement_ids)
+            target = sum(b.bank[t].credit_paise for t in h.bank_txn_ids)
+            pool = [(c["settlement_id"], c["amount_paise"]) for c in candidates
+                    if "settlement_id" in c and c["settlement_id"] not in used]
+            return any(not verify(h.model_copy(update={"settlement_ids": sol, "adjustments": []}),
+                                  "A", b, h.bank_txn_ids[0])
+                       for sol in find_subset_sum(pool, target, max_k=3, limit=20))
+        used = set(h.invoice_ids)
+        target = sum(b.rows[p].amount for p in h.recon_entity_ids)
+        pool = [(c["invoice_id"], c["amount_paise"]) for c in candidates
+                if "invoice_id" in c and c["invoice_id"] not in used]
+        return any(not verify(h.model_copy(update={"invoice_ids": sol, "adjustments": []}),
+                              "B", b, h.recon_entity_ids[0])
+                   for sol in find_subset_sum(pool, target, max_k=5, limit=40))
 
     # ------------------------------------------------------------ graph
 

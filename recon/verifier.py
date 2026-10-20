@@ -129,6 +129,14 @@ def verify(h: Hypothesis, level: Level, book: Book, exception_id: str) -> list[s
         if pay_sum != inv_sum:
             v.append(f"sum mismatch: payments={pay_sum} invoices={inv_sum} gap={pay_sum - inv_sum}")
 
+    # 4b. UTR consistency: a UTR (or truncated prefix) in the narration is evidence. A settlement
+    #     whose UTR contradicts it cannot be what this credit paid out.
+    if level == "A" and len(left) == 1:
+        utr = book.bank[left[0]].utr
+        if utr and not any(book.settlements[s].utr.startswith(utr) for s in right):
+            v.append(f"UTR mismatch: {left[0]} narration carries {utr!r}, which no cited "
+                     f"settlement UTR starts with")
+
     # 5. date window (holiday-aware for bank credits)
     if level == "A":
         for t in left:

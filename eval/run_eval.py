@@ -24,7 +24,7 @@ from recon.deterministic import residue, run_deterministic
 from recon.generator import generate, write
 
 # $ per million tokens (input, output). Check current pricing before trusting cost numbers.
-PRICES = {"claude-sonnet-5": (3.0, 15.0), "claude-haiku-4-5": (1.0, 5.0),
+PRICES = {"claude-sonnet-5-5": (3.0, 15.0), "claude-haiku-5-5": (1.0, 5.0), "claude-sonnet-5": (3.0, 15.0), "claude-haiku-4-5": (1.0, 5.0),
           "claude-opus-5": (5.0, 25.0)}
 
 RUNS = Path("data/runs")
@@ -115,12 +115,12 @@ def run(a) -> dict:
     tin, tout = sum(s["input"] for s in all_stats), sum(s["output"] for s in all_stats)
     pin, pout = PRICES.get(llm_cache.HYPOTHESIS_MODEL, (3.0, 15.0))
     usd = (tin * pin + tout * pout) / 1e6
-    bank_lines = sum(r["levels"]["A"]["items"] for r in per_seed.values())
+    items = sum(r["levels"]["A"]["items"] + r["levels"]["B"]["items"] for r in per_seed.values())
     agg["cost"] = {
         "exceptions": exc, "llm_calls": calls,
         "llm_calls_per_exception": round(calls / exc, 2) if exc else 0,
         "input_tokens": tin, "output_tokens": tout, "usd": round(usd, 4),
-        "inr_per_1000_bank_lines": round(usd * 84 * 1000 / bank_lines, 2) if bank_lines else 0,
+        "inr_per_1000_items": round(usd * 84 * 1000 / items, 2) if items else 0,
         "latency_p50_s": round(statistics.median(lat), 3) if lat else None,
         "latency_p95_s": round(lat[int(0.95 * (len(lat) - 1))], 3) if lat else None,
         "cache_hits": client.hits, "cache_misses": client.misses,

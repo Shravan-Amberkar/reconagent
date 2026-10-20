@@ -193,3 +193,13 @@ def test_llm_schema_fallback_gated_by_invariant(tmp_path):
     schema, txns, src = ingest.infer_statement_schema(text, llm=fake_llm, use_cache=False)
     assert src == "llm" and schema == good and len(txns) == 2
     assert seen[0] is None and seen[1]                      # failures fed back on retry
+
+
+def test_utr_prefix_contradiction_rejected(sample):
+    from recon.models import Hypothesis
+    from recon.verifier import verify
+    book = Book.load(sample)
+    t = next(x for x in book.credits() if x.utr_confidence == "full")
+    wrong = next(s for s in book.settlements.values() if not s.utr.startswith(t.utr))
+    h = Hypothesis(pattern="utr_truncated", bank_txn_ids=[t.txn_id], settlement_ids=[wrong.settlement_id])
+    assert any("UTR mismatch" in v for v in verify(h, "A", book, t.txn_id))
