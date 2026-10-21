@@ -203,3 +203,15 @@ def test_utr_prefix_contradiction_rejected(sample):
     wrong = next(s for s in book.settlements.values() if not s.utr.startswith(t.utr))
     h = Hypothesis(pattern="utr_truncated", bank_txn_ids=[t.txn_id], settlement_ids=[wrong.settlement_id])
     assert any("UTR mismatch" in v for v in verify(h, "A", book, t.txn_id))
+
+
+def test_store_usable_from_another_thread():
+    """Streamlit reruns on a new thread; the cached store must still work there."""
+    import threading
+    st = Store()
+    st.commit(Match(match_id="M1", level="B", left_ids=("x",), right_ids=("y",),
+                    source="deterministic", proof=Proof(rule="t", equation="1=1", ids=("x", "y"))))
+    out = []
+    t = threading.Thread(target=lambda: out.append(len(st.matches())))
+    t.start(); t.join()
+    assert out == [1]

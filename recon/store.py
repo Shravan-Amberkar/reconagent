@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import json
 import sqlite3
+import threading
 from pathlib import Path
 
 from recon.models import Escalation, Match
@@ -30,7 +31,11 @@ class AlreadyReconciled(Exception):
 
 class Store:
     def __init__(self, path: str | Path = ":memory:"):
-        self.db = sqlite3.connect(str(path))
+        # One connection shared across threads (Streamlit reruns each interaction on a new
+        # thread). SQLite serialises writes itself; the lock keeps our multi-statement
+        # commits atomic with respect to each other.
+        self.db = sqlite3.connect(str(path), check_same_thread=False)
+        self.lock = threading.RLock()
         self.db.executescript(SCHEMA)
         self._n = self.db.execute("SELECT COUNT(*) FROM matches").fetchone()[0]
 
@@ -44,7 +49,7 @@ class Store:
     def commit(self, match: Match) -> None:
         ids = list(match.left_ids) + list(match.right_ids)
         try:
-            with self.db:
+            with self.lock, self.db:
                 self.db.execute(
                     "INSERT INTO matches VALUES (?,?,?,?,?,?,?)",
                     (match.match_id, match.level, json.dumps(match.left_ids),
