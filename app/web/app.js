@@ -181,6 +181,8 @@ function paneProof() {
   </div>`;
 }
 
+$("#watch").addEventListener("click", () => { $("#video").showModal(); $("#video video").play(); });
+$("#video").addEventListener("close", () => $("#video video").pause());
 $("#tabs").addEventListener("click", (e) => { const b = e.target.closest("[data-t]"); if (b) { tab = b.dataset.t; render(); } });
 document.querySelectorAll(".mode").forEach((b) => b.addEventListener("click", () => load(b.dataset.mode)));
 $("#upform").addEventListener("submit", async (ev) => {

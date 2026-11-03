@@ -55,7 +55,7 @@ Short log of design choices, deviations from the original spec, and what was cut
 ## Human queue
 
 - `escalate` calls LangGraph `interrupt()` when `human_in_loop=True` (tested with an in-memory
-  checkpointer). The Streamlit UI approves through `pipeline.approve`, which re-runs the same
+  checkpointer). The web UI approves through `pipeline.approve`, which re-runs the same
   verifier before committing as `source=human`. A durable SQLite checkpointer across UI restarts
   is not wired.
 

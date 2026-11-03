@@ -2,6 +2,8 @@
 
 Data mirrors Razorpay's Settlement Recon API; all of it is synthetic.
 
+**Try it:** [reconagent-shravan.fly.dev](https://reconagent-shravan.fly.dev) · **Watch:** [2-minute demo](app/web/demo.mp4) (also in the app's header)
+
 A merchant receives money as **settlements**: the gateway batches many payments, subtracts fees
 and 18% GST on the fees, nets off refunds and chargebacks, and sends one bank credit — with a
 UTR that the bank often truncates — on T+N days. Finance then has to answer, usually in Excel:
@@ -258,7 +260,7 @@ uv run uvicorn app.api:app --port 8501      # http://127.0.0.1:8501
 
 Live AI for uploaded files: `RECON_LIVE_AI=true` plus `ANTHROPIC_API_KEY`; at most
 `RECON_MAX_AGENT_EXCEPTIONS` (default 25) exceptions per upload go to the agent, the rest wait for a
-person. Docker (Hugging Face Spaces compatible, port 7860): `docker build -t reconagent . && docker run -p 7860:7860 reconagent`.
+person. Docker (port 7860; deployed on Fly.io with `fly.toml`): `docker build -t reconagent . && docker run -p 7860:7860 reconagent`.
 
 The agent needs `ANTHROPIC_API_KEY` in `.env` (gitignored) for uncached exceptions; every call is
 cached under `data/llm_cache/`, so re-running an eval is free and reproducible. Model ids live in

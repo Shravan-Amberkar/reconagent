@@ -1,0 +1,25 @@
+# Fly.io deploy for the ReconAgent demo. The sample month replays from the recorded agent run, so
+# no secrets are needed. To reconcile uploads with the live agent:
+#   fly secrets set RECON_LIVE_AI=true ANTHROPIC_API_KEY=...
+app = "reconagent-shravan"
+primary_region = "sin"   # Singapore, closest Fly region to India
+
+[build]
+
+[http_service]
+  internal_port = 7860
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+
+  [[http_service.checks]]
+    grace_period = "30s"
+    interval = "30s"
+    method = "GET"
+    path = "/api/config"
+    timeout = "5s"
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "512mb"
