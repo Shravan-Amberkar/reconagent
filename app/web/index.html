@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ReconAgent: month-end reconciliation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><rect x="5" y="4" width="22" height="24" rx="4" fill="none" stroke="currentColor" stroke-width="2.6"/><path d="M10 12h12M10 17h12M10 22h7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><path d="m20 22 2 2 4-5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div><b>ReconAgent</b><span>Month-end reconciliation for fee-collecting organisations</span></div>
+  </div>
+  <nav class="modes">
+    <button class="mode on" data-mode="sample">Sample month</button>
+    <button class="mode" data-mode="upload">Use my own files</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Who paid? Who didn't?<br><span>And where did the money go?</span></h1>
+  <p>A school, clinic or housing society collects fees through Razorpay, UPI and bank transfers, but the bank statement shows one lump credit per settlement, after fees, GST, refunds and chargebacks have been taken out. Parents pay without a reference, siblings are paid in one go, and a bank holiday shifts everything by a day. ReconAgent matches every bank credit to its Razorpay settlement and every payment to the right invoice. Rules clear the easy cases, an AI agent investigates the rest, and a verifier re-checks every match with exact arithmetic. Anything it can't prove comes to you.</p>
+  <ol class="steps">
+    <li><b>1</b>Upload your bank statement, Razorpay settlement report and fee ledger</li>
+    <li><b>2</b>Rules and an AI agent match everything, with proof</li>
+    <li><b>3</b>Get who paid, who to chase, and a fee audit</li>
+  </ol>
+</section>
+
+<section id="upload" class="card upload" hidden>
+  <h2>Reconcile your own month</h2>
+  <p class="muted">Files are processed for this session only and never stored. Names and phone numbers are masked before anything reaches the AI. Download the sample files to see the expected formats; any bank's CSV layout is detected automatically.</p>
+  <form id="upform">
+    <div class="files">
+      <label class="file"><b>Razorpay settlement report</b><small>The settlement recon export (CSV)</small><input type="file" name="recon" accept=".csv" required><a href="/api/files/razorpay_recon.csv">sample</a></label>
+      <label class="file"><b>Bank statement</b><small>CSV from your bank, any layout</small><input type="file" name="bank" accept=".csv" required><a href="/api/files/bank_statement_B.csv">sample</a></label>
+      <label class="file"><b>Fee ledger</b><small>Invoices: id, customer, amount, due date</small><input type="file" name="ledger" accept=".csv" required><a href="/api/files/ledger.csv">sample</a></label>
+    </div>
+    <div class="row"><button class="primary" type="submit">Check my files</button><span id="upstate" class="muted"></span></div>
+  </form>
+  <div id="preview"></div>
+  <div id="uperr" class="error" hidden></div>
+</section>
+
+<section class="kpis" id="kpis"></section>
+<div class="banner" id="banner" hidden></div>
+<nav class="tabs" id="tabs"></nav>
+<main class="pane" id="pane"></main>
+<footer>Synthetic sample data only. Built with Python, LangGraph and Claude.</footer>
+<script src="app.js"></script>
+</body>
+</html>

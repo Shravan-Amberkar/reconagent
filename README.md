@@ -20,6 +20,18 @@ survive an adversarial challenger. Anything ambiguous goes to a human.
 
 > **Headline guarantee: 0% false matches on the seeded benchmark. Escalate instead of guess.**
 
+**What the person at month-end gets** (open the app, the sample month loads instantly, no key needed):
+
+- **Who paid / who to chase**: every invoice with its proof chain (payment → Razorpay settlement →
+  bank line, and the rule or agent step that matched them), and a downloadable chase list.
+- **Bank vs Razorpay**: a waterfall from what customers paid to what reached the bank (fees, 18%
+  GST, refunds, chargebacks), every settlement traced to its bank credit, and a **fee audit**
+  against the contracted rates with a ready-to-send support ticket citing payment ids.
+- **What the AI solved**: the hard cases rules couldn't decide, each with the verifier's equation.
+- **Needs you**: anything the agent could not prove, with its candidate explanations. Approving one
+  re-runs the same verifier.
+- **Your own files**: upload three CSVs (any bank layout is detected), check the preview, run.
+
 ---
 
 ## Results
@@ -241,8 +253,12 @@ false match — even if the guess happened to be right.
 ```sh
 uv sync
 uv run pytest -q && uv run python -m eval.run_eval --seeds 1..5 --deterministic-only
-uv run streamlit run app/streamlit_app.py
+uv run uvicorn app.api:app --port 8501      # http://127.0.0.1:8501
 ```
+
+Live AI for uploaded files: `RECON_LIVE_AI=true` plus `ANTHROPIC_API_KEY`; at most
+`RECON_MAX_AGENT_EXCEPTIONS` (default 25) exceptions per upload go to the agent, the rest wait for a
+person. Docker (Hugging Face Spaces compatible, port 7860): `docker build -t reconagent . && docker run -p 7860:7860 reconagent`.
 
 The agent needs `ANTHROPIC_API_KEY` in `.env` (gitignored) for uncached exceptions; every call is
 cached under `data/llm_cache/`, so re-running an eval is free and reproducible. Model ids live in
