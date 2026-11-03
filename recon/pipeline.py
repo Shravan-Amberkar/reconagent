@@ -16,6 +16,8 @@ from recon.verifier import verify
 
 def run(folder: Path, db: Path, use_agent: bool = True, offline: bool = True,
         bank_format: str = "A") -> tuple[Book, dict]:
+    import time
+    t0 = time.monotonic()
     """Deterministic passes, then the agent on the residue. With offline=True the agent runs
     from the committed LLM cache only; any uncached exception is left as `pending`."""
     db = Path(db)
@@ -38,6 +40,44 @@ def run(folder: Path, db: Path, use_agent: bool = True, offline: bool = True,
                     continue
                 info["agent_matched" if out.get("outcome") == "matched" else "escalated"] += 1
         info["usage"] = agent.usage
+    info["seconds"] = round(time.monotonic() - t0, 1)
+    return book, info
+
+
+def run_files(recon: Path, bank: Path, ledger: Path, db: Path, use_agent: bool, offline: bool,
+              max_agent_exceptions: int = 25, schema_llm=None) -> tuple[Book, dict]:
+    """Same as run() for uploaded files with arbitrary names. With a live agent, at most
+    `max_agent_exceptions` exceptions are sent to the model per upload (cost cap); the rest stay
+    pending for a human, never guessed."""
+    import time
+    t0 = time.monotonic()
+    db = Path(db)
+    if db.exists():
+        db.unlink()
+    book, source = Book.from_files(recon, bank, ledger, store=Store(db), schema_llm=schema_llm)
+    det = run_deterministic(book)
+    info = {"deterministic": len(det), "agent_matched": 0, "escalated": 0, "pending": [],
+            "bank_format": source, "usage": {"calls": 0, "input": 0, "output": 0}}
+    if use_agent:
+        agent = Agent(book, llm_cache.CachedAnthropic(offline=offline), RunConfig())
+        ra, rb = residue(book)
+        sent = 0
+        for level, ids in (("A", ra), ("B", rb)):
+            for ex in ids:
+                if not book.free(ex):
+                    continue
+                if sent >= max_agent_exceptions:
+                    info["pending"].append(ex)
+                    continue
+                sent += 1
+                try:
+                    out = agent.resolve(level, ex)
+                except llm_cache.LlmUnavailable:
+                    info["pending"].append(ex)
+                    continue
+                info["agent_matched" if out.get("outcome") == "matched" else "escalated"] += 1
+        info["usage"] = agent.usage
+    info["seconds"] = round(time.monotonic() - t0, 1)
     return book, info
 
 

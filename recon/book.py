@@ -29,6 +29,18 @@ class Book:
                    bank={t.txn_id: t for t in bank}, invoices={i.invoice_id: i for i in invoices},
                    store=store or Store())
 
+    @classmethod
+    def from_files(cls, recon: Path, bank: Path, ledger: Path, store: Store | None = None,
+                   schema_llm=None) -> tuple["Book", str]:
+        """Load from explicit paths (uploads arrive with any file name). Returns the bank-format
+        source too: format_a | cache | heuristic | llm."""
+        rows, settlements = load_recon(Path(recon))
+        txns, source = load_bank(Path(bank), llm=schema_llm)
+        invoices = load_ledger(Path(ledger))
+        return cls(rows={r.entity_id: r for r in rows}, settlements=settlements,
+                   bank={t.txn_id: t for t in txns}, invoices={i.invoice_id: i for i in invoices},
+                   store=store or Store()), source
+
     # ---- views
 
     @property

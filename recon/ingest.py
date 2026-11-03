@@ -20,7 +20,7 @@ from typing import Callable, Literal
 from pydantic import BaseModel
 
 from recon.models import BankTxn, Invoice, ReconRow, Settlement
-from recon.money import payment_net, tax_matches
+from recon.money import payment_net
 
 SCHEMA_CACHE = Path("data/schema_cache.json")
 
@@ -109,8 +109,7 @@ def load_recon(path: Path) -> tuple[list[ReconRow], dict[str, Settlement]]:
         if row.type == "payment":
             if row.credit != payment_net(row.amount, row.fee, row.tax):
                 raise IngestError(f"{row.entity_id}: credit != amount - fee - tax")
-            if not tax_matches(row.fee, row.tax):
-                raise IngestError(f"{row.entity_id}: tax is not 18% of fee")
+            # A GST charge that is not 18% of the fee is a finding (recon.gaps), not bad input.
         by_sid.setdefault(row.settlement_id, []).append(row)
     for sid, rs in sorted(by_sid.items()):
         settlements[sid] = Settlement(
